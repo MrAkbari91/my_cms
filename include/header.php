@@ -50,18 +50,24 @@
                 <li class="nav-item custom-nav-item">
                     <a class="nav-link" href="paymentstatus.php">Payment</a>
                 </li>
-                <li class="nav-item custom-nav-item">
+
+                <?php
+                session_start();
+                if(isset($_SESSION['is_login'])){
+                    echo '<li class="nav-item custom-nav-item">
                     <a class="nav-link" href="#">My Profile</a>
                 </li>
                 <li class="nav-item custom-nav-item">
-                    <a class="nav-link" href="#">Logout</a>
-                </li>
-                <li class="nav-item custom-nav-item" data-toggle="modal" data-target="#loginModal">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>';
+                } else {
+                    echo '<li class="nav-item custom-nav-item" data-toggle="modal" data-target="#loginModal">
                     <a class="nav-link" href="#">Login</a>
                 </li>
                 <li class="nav-item custom-nav-item" data-toggle="modal" data-target="#registrationModal">
                     <a class="nav-link" href="#">Sign up</a>
-                </li>
+                </li>';
+                } ?>
                 <!-- <li class="nav-item custom-nav-item">
                     <a class="nav-link" href="feedback.php">Feedback</a>
                 </li> -->

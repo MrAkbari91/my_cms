@@ -10,18 +10,18 @@
 			<div class="modal-body">
 				<form id="registration">
 					<div class="form-group">
-						<i class="fas fa-user"></i><label for="rname" class="pl-2 font-weight-bold">Name</label>
+						<i class="fas fa-user"></i><label class="pl-2 font-weight-bold">Name</label>
                         <span id="msg1"></span>
 						<input type="text" class="form-control" name="rname" id="rname" placeholder="Name">
 					</div>
 					<div class="form-group">
-						<i class="fas fa-envelope"></i><label for="remail" class="pl-2 font-weight-bold">Email</label>
+						<i class="fas fa-envelope"></i><label class="pl-2 font-weight-bold">Email</label>
                         <span id="msg2"></span>
 						<input type="email" class="form-control" name="remail" id="remail" placeholder="Email">
 						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 					</div>
 					<div class="form-group">
-						<i class="fas fa-key"></i><label for="rpwd" class="pl-2 font-weight-bold">Password</label>
+						<i class="fas fa-key"></i><label class="pl-2 font-weight-bold">Password</label>
                         <span id="msg3"></span>
 						<input type="password" class="form-control" name="rpwd" id="rpwd" placeholder="Password">
 					</div>

@@ -13,9 +13,7 @@ $(document).ready(function(){
             },
             success:function(data){
                 // console.log(data);
-                if(remail==""){
-                    $("#msg2").html('<small style="color:red;">email nakho</small>');
-                }
+               
                 if(data!=0){
                     $("#msg2").html('<small style="color:red;">email pelethi 6</small>');
                     $("#regbtn").attr("disabled",true);
@@ -57,11 +55,11 @@ function addstudent(){
         return false;
     }else{
         $.ajax({
-            url:'addstudent.php',
+            url:'student/addstudent.php',
             method:'POST',
             dataType:"json",
             data:{
-                regbtn:"regbtn",
+                checkregbtn:"checkregbtn",
                 rname:rname,
                 remail:remail,
                 rpwd:rpwd,
@@ -95,18 +93,18 @@ function login(){
     var lemail=$("#lemail").val();
     var lpwd=$("#lpwd").val();
     $.ajax({
-        url:"addstudent.php",
+        url:"student/addstudent.php",
         method:"POST",
         data:{
-            loginemail:"loginemail",
-            lemail:lemail,
-            lpwd:lpwd,
+            checkloginemail:"checkloginemail",
+            lemail : lemail,
+            lpwd : lpwd,
         },
         success: function(data){
             if(data==0){
-                $("#statusmsglogin").html('<span calss="alert alert-danger">invalid email id or password</span>');
+                $("#statusmsglogin").html("<span class='alert alert-danger'>invalid email id or password</span>");
             }else if(data==1){
-                $("#statusmsglogin").html('<div class="spinner-border tect-success" role="status"></div>');
+                $("#statusmsglogin").html('<div class="spinner-border text-success" role="status"></div>');
                 setTimeout(()=>{
                     window.location.href="index.php";
                 },1000);
