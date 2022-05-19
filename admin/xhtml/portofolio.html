@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="admin, dashboard" />
+	<meta name="author" content="DexignZone" />
+	<meta name="robots" content="index, follow" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Kripton : Crypto Admin Dashboard  Bootstrap 5 Template" />
+	<meta property="og:title" content="Kripton : Crypto Admin Dashboard  Bootstrap 5 Template" />
+	<meta property="og:description" content="Kripton : Crypto Admin Dashboard  Bootstrap 5 Template" />
+	<meta property="og:image" content="https://kripton.dexignzone.com/xhtml/social-image.png"/>
+	<meta name="format-detection" content="telephone=no">
+    <title>kripton - Crypto Admin Dashboard </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+	<link rel="stylesheet" href="vendor/chartist/css/chartist.min.css">
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <svg class="logo-abbr" xmlns="http://www.w3.org/2000/svg" width="51" height="51" fill="none" >
+					<path class="svg-logo-pattern" d="M12.683 49.636c0 .488-.392.88-.877.88a.88.88 0 0 1-.88-.88v-6.827a.88.88 0 0 1 .88-.88.88.88 0 0 1 .877.88v6.827zm-11.757-10a.88.88 0 0 1-.88-.877.88.88 0 0 1 .88-.88h6.83a.88.88 0 0 1 .877.88c0 .485-.392.877-.877.877H.926zm0-26.999a.88.88 0 0 1-.88-.877.88.88 0 0 1 .88-.88h6.83c.485 0 .877.392.877.88s-.392.877-.877.877H.926zm0 6.751a.88.88 0 0 1-.88-.88.88.88 0 0 1 .88-.877h6.83c.485 0 .877.392.877.877s-.392.88-.877.88H.926zm0 6.751a.88.88 0 0 1-.88-.88.88.88 0 0 1 .88-.877h6.83c.485 0 .877.392.877.877a.88.88 0 0 1-.877.88H.926zm0 6.75a.88.88 0 1 1 0-1.761h6.83a.88.88 0 0 1 0 1.761H.926zM10.926.88a.88.88 0 0 1 .88-.88.88.88 0 0 1 .877.88v6.83c0 .485-.392.877-.877.877s-.88-.392-.88-.877V.88zm26.999 0a.88.88 0 0 1 .88-.88.88.88 0 0 1 .877.88v6.83c0 .485-.392.877-.877.877a.88.88 0 0 1-.88-.877V.88zm-6.751 0a.88.88 0 1 1 1.761 0v6.83a.88.88 0 1 1-1.761 0V.88zm-6.747 0a.88.88 0 0 1 .877-.88.88.88 0 0 1 .88.88v6.83a.88.88 0 0 1-.88.877c-.485 0-.877-.392-.877-.877V.88zm-6.751 0a.88.88 0 0 1 .877-.88.88.88 0 0 1 .88.88v6.83c0 .485-.392.877-.88.877s-.877-.392-.877-.877V.88zm32.005 36.998a.88.88 0 0 1 .881.88c0 .485-.392.877-.881.877h-6.827a.88.88 0 0 1-.88-.877.88.88 0 0 1 .88-.88h6.827zm0-26.999a.88.88 0 0 1 .881.88c0 .485-.392.877-.881.877h-6.827a.88.88 0 0 1-.88-.877.88.88 0 0 1 .88-.88h6.827zm0 6.751c.488 0 .881.392.881.877a.88.88 0 0 1-.881.88h-6.827a.88.88 0 0 1-.88-.88.88.88 0 0 1 .88-.877h6.827zm0 6.751c.488 0 .881.392.881.877a.88.88 0 0 1-.881.88h-6.827a.88.88 0 0 1-.88-.88.88.88 0 0 1 .88-.877h6.827zm0 6.747a.88.88 0 1 1 0 1.761h-6.827a.88.88 0 0 1 0-1.761h6.827zm-9.999 18.508c0 .488-.392.88-.877.88a.88.88 0 0 1-.88-.88v-6.827a.88.88 0 0 1 .88-.88.88.88 0 0 1 .877.88v6.827zm-6.747 0a.88.88 0 1 1-1.761 0v-6.827a.88.88 0 1 1 1.761 0v6.827zm-6.75 0a.88.88 0 0 1-.88.88c-.485 0-.877-.392-.877-.88v-6.827a.88.88 0 0 1 .877-.88.88.88 0 0 1 .88.88v6.827zm-6.75 0a.88.88 0 0 1-.88.88c-.485 0-.877-.392-.877-.88v-6.827a.88.88 0 0 1 .877-.88.88.88 0 0 1 .88.88v6.827z" fill="#363062"/><g fill-rule="evenodd"><path  class="svg-logo-path" d="M11.806 7.711h26.999c2.226 0 4.05 1.821 4.05 4.05v26.999c0 2.226-1.824 4.05-4.05 4.05H11.806c-2.229 0-4.05-1.824-4.05-4.05V11.76a4.06 4.06 0 0 1 4.05-4.05z" fill="#4d4c7d"/><path  class="svg-logo-path" d="M35.287 7.711h3.518c2.226 0 4.05 1.821 4.05 4.05v26.999c0 2.226-1.824 4.05-4.05 4.05h-3.518c2.229 0 4.053-1.824 4.053-4.05V11.76c0-2.229-1.824-4.05-4.053-4.05z" fill="#363062"/><path class="svg-bg-path" d="M14.733 13.75h21.142a.94.94 0 0 1 .937.937v21.142a.94.94 0 0 1-.937.937H14.733a.94.94 0 0 1-.937-.937V14.687a.94.94 0 0 1 .937-.937z" fill="#fff"/><path class="svg-bg-path"  d="M32.36 13.75h3.515a.94.94 0 0 1 .937.937v21.142a.94.94 0 0 1-.937.937H32.36a.94.94 0 0 0 .937-.937V14.687a.94.94 0 0 0-.937-.937z" fill="#fff"/></g><path class="svg-logo-path" d="M23.171 18.75v-1.153a.88.88 0 1 1 1.761 0v1.153h1.837v-1.153c0-.485.392-.877.88-.877s.877.392.877.877v1.259a3.75 3.75 0 0 1 1.741.977c.674.671 1.093 1.595 1.093 2.611a3.67 3.67 0 0 1-1.319 2.814c.834.701 1.319 1.724 1.319 2.817 0 1.013-.419 1.937-1.093 2.608-.475.472-1.073.817-1.741.98v1.256a.88.88 0 0 1-.877.88.88.88 0 0 1-.88-.88v-1.15h-1.837v1.15a.88.88 0 1 1-1.761 0v-1.15h-3.043a.88.88 0 0 1 0-1.761h.921v-9.501h-.921a.88.88 0 0 1-.88-.877.88.88 0 0 1 .88-.88h3.043zm4.478 7.388h-4.844v3.87h4.844c.538 0 1.026-.216 1.382-.568a1.92 1.92 0 0 0 .572-1.365 1.93 1.93 0 0 0-.572-1.369c-.355-.352-.844-.568-1.382-.568zm0-5.631h-4.844v3.874h4.844a1.96 1.96 0 0 0 1.382-.571 1.92 1.92 0 0 0 .572-1.366c0-.531-.219-1.017-.572-1.369a1.97 1.97 0 0 0-1.382-.568z" fill="#4d4c7d"/>
+				</svg>
+				<svg class="brand-title" width="103" height="31" viewBox="0 0 103 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path  class="svg-logo-title"  d="M10.284 23L5.524 16.448V23H0.736V2.28H5.524V13.732L10.256 7.376H16.164L9.668 15.216L16.22 23H10.284ZM22.8326 9.98C23.3926 9.12133 24.0926 8.44933 24.9326 7.964C25.7726 7.46 26.7059 7.208 27.7326 7.208V12.276H26.4166C25.2219 12.276 24.3259 12.5373 23.7286 13.06C23.1313 13.564 22.8326 14.46 22.8326 15.748V23H18.0446V7.376H22.8326V9.98ZM32.4292 5.752C31.5892 5.752 30.8985 5.50933 30.3572 5.024C29.8345 4.52 29.5732 3.904 29.5732 3.176C29.5732 2.42933 29.8345 1.81333 30.3572 1.328C30.8985 0.823998 31.5892 0.571998 32.4292 0.571998C33.2505 0.571998 33.9225 0.823998 34.4452 1.328C34.9865 1.81333 35.2572 2.42933 35.2572 3.176C35.2572 3.904 34.9865 4.52 34.4452 5.024C33.9225 5.50933 33.2505 5.752 32.4292 5.752ZM34.8092 7.376V23H30.0212V7.376H34.8092ZM43.067 9.588C43.5336 8.86 44.1776 8.272 44.999 7.824C45.8203 7.376 46.7816 7.152 47.883 7.152C49.171 7.152 50.3376 7.47867 51.383 8.132C52.4283 8.78533 53.2496 9.71867 53.847 10.932C54.463 12.1453 54.771 13.5547 54.771 15.16C54.771 16.7653 54.463 18.184 53.847 19.416C53.2496 20.6293 52.4283 21.572 51.383 22.244C50.3376 22.8973 49.171 23.224 47.883 23.224C46.8003 23.224 45.839 23 44.999 22.552C44.1776 22.104 43.5336 21.5253 43.067 20.816V30.448H38.279V7.376H43.067V9.588ZM49.899 15.16C49.899 13.9653 49.563 13.032 48.891 12.36C48.2376 11.6693 47.4256 11.324 46.455 11.324C45.503 11.324 44.691 11.6693 44.019 12.36C43.3656 13.0507 43.039 13.9933 43.039 15.188C43.039 16.3827 43.3656 17.3253 44.019 18.016C44.691 18.7067 45.503 19.052 46.455 19.052C47.407 19.052 48.219 18.7067 48.891 18.016C49.563 17.3067 49.899 16.3547 49.899 15.16ZM65.9909 18.94V23H63.5549C61.8189 23 60.4655 22.58 59.4949 21.74C58.5242 20.8813 58.0389 19.4907 58.0389 17.568V11.352H56.1349V7.376H58.0389V3.568H62.8269V7.376H65.9629V11.352H62.8269V17.624C62.8269 18.0907 62.9389 18.4267 63.1629 18.632C63.3869 18.8373 63.7602 18.94 64.2829 18.94H65.9909ZM75.7699 23.224C74.2392 23.224 72.8579 22.8973 71.6259 22.244C70.4125 21.5907 69.4512 20.6573 68.7419 19.444C68.0512 18.2307 67.7059 16.812 67.7059 15.188C67.7059 13.5827 68.0605 12.1733 68.7699 10.96C69.4792 9.728 70.4499 8.78533 71.6819 8.132C72.9139 7.47867 74.2952 7.152 75.8259 7.152C77.3565 7.152 78.7379 7.47867 79.9699 8.132C81.2019 8.78533 82.1725 9.728 82.8819 10.96C83.5912 12.1733 83.9459 13.5827 83.9459 15.188C83.9459 16.7933 83.5819 18.212 82.8539 19.444C82.1445 20.6573 81.1645 21.5907 79.9139 22.244C78.6819 22.8973 77.3005 23.224 75.7699 23.224ZM75.7699 19.08C76.6845 19.08 77.4592 18.744 78.0939 18.072C78.7472 17.4 79.0739 16.4387 79.0739 15.188C79.0739 13.9373 78.7565 12.976 78.1219 12.304C77.5059 11.632 76.7405 11.296 75.8259 11.296C74.8925 11.296 74.1179 11.632 73.5019 12.304C72.8859 12.9573 72.5779 13.9187 72.5779 15.188C72.5779 16.4387 72.8765 17.4 73.4739 18.072C74.0899 18.744 74.8552 19.08 75.7699 19.08ZM96.006 7.208C97.8353 7.208 99.2913 7.80533 100.374 9C101.475 10.176 102.026 11.8 102.026 13.872V23H97.266V14.516C97.266 13.4707 96.9953 12.6587 96.454 12.08C95.9127 11.5013 95.1847 11.212 94.27 11.212C93.3553 11.212 92.6273 11.5013 92.086 12.08C91.5447 12.6587 91.274 13.4707 91.274 14.516V23H86.486V7.376H91.274V9.448C91.7593 8.75733 92.4127 8.216 93.234 7.824C94.0553 7.41333 94.9793 7.208 96.006 7.208Z" fill="#363062"/>
+				</svg>
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Chat box start
+        ***********************************-->
+		<div class="chatbox">
+			<div class="chatbox-close"></div>
+			<div class="custom-tab-1">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="tab" href="portofolio.html#notes">Notes</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="tab" href="portofolio.html#alerts">Alerts</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" data-bs-toggle="tab" href="portofolio.html#chat">Chat</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade active show" id="chat" role="tabpanel">
+						<div class="card mb-sm-3 mb-md-0 contacts_card dz-chat-user-box">
+							<div class="card-header chat-list-header text-center">
+								<a href="portofolio.html#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
+								<div>
+									<h6 class="mb-1">Chat List</h6>
+									<p class="mb-0">Show All</p>
+								</div>
+								<a href="portofolio.html#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
+							</div>
+							<div class="card-body contacts_body p-0 dz-scroll  " id="DZ_W_Contacts_Body">
+								<ul class="contacts">
+									<li class="name-first-letter">A</li>
+									<li class="active dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/1.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon"></span>
+											</div>
+											<div class="user_info">
+												<span>Archie Parker</span>
+												<p>Kalid is online</p>
+											</div>
+										</div>
+									</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/2.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon offline"></span>
+											</div>
+											<div class="user_info">
+												<span>Alfie Mason</span>
+												<p>Taherah left 7 mins ago</p>
+											</div>
+										</div>
+									</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon"></span>
+											</div>
+											<div class="user_info">
+												<span>AharlieKane</span>
+												<p>Sami is online</p>
+											</div>
+										</div>
+									</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/4.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon offline"></span>
+											</div>
+											<div class="user_info">
+												<span>Athan Jacoby</span>
+												<p>Nargis left 30 mins ago</p>
+											</div>
+										</div>
+									</li>
+									<li class="name-first-letter">B</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/5.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon offline"></span>
+											</div>
+											<div class="user_info">
+												<span>Bashid Samim</span>
+												<p>Rashid left 50 mins ago</p>
+											</div>
+										</div>
+									</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/1.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon"></span>
+											</div>
+											<div class="user_info">
+												<span>Breddie Ronan</span>
+												<p>Kalid is online</p>
+											</div>
+										</div>
+									</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/2.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon offline"></span>
+											</div>
+											<div class="user_info">
+												<span>Ceorge Carson</span>
+												<p>Taherah left 7 mins ago</p>
+											</div>
+										</div>
+									</li>
+									<li class="name-first-letter">D</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon"></span>
+											</div>
+											<div class="user_info">
+												<span>Darry Parker</span>
+												<p>Sami is online</p>
+											</div>
+										</div>
+									</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/4.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon offline"></span>
+											</div>
+											<div class="user_info">
+												<span>Denry Hunter</span>
+												<p>Nargis left 30 mins ago</p>
+											</div>
+										</div>
+									</li>
+									<li class="name-first-letter">J</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/5.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon offline"></span>
+											</div>
+											<div class="user_info">
+												<span>Jack Ronan</span>
+												<p>Rashid left 50 mins ago</p>
+											</div>
+										</div>
+									</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/1.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon"></span>
+											</div>
+											<div class="user_info">
+												<span>Jacob Tucker</span>
+												<p>Kalid is online</p>
+											</div>
+										</div>
+									</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/2.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon offline"></span>
+											</div>
+											<div class="user_info">
+												<span>James Logan</span>
+												<p>Taherah left 7 mins ago</p>
+											</div>
+										</div>
+									</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon"></span>
+											</div>
+											<div class="user_info">
+												<span>Joshua Weston</span>
+												<p>Sami is online</p>
+											</div>
+										</div>
+									</li>
+									<li class="name-first-letter">O</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/4.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon offline"></span>
+											</div>
+											<div class="user_info">
+												<span>Oliver Acker</span>
+												<p>Nargis left 30 mins ago</p>
+											</div>
+										</div>
+									</li>
+									<li class="dz-chat-user">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="images/avatar/5.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon offline"></span>
+											</div>
+											<div class="user_info">
+												<span>Oscar Weston</span>
+												<p>Rashid left 50 mins ago</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="card chat dz-chat-history-box d-none">
+							<div class="card-header chat-list-header text-center">
+								<a href="portofolio.html#" class="dz-chat-history-back">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polygon points="0 0 24 0 24 24 0 24"/><rect fill="#000000" opacity="0.3" transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) " x="14" y="7" width="2" height="10" rx="1"/><path d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) "/></g></svg>
+								</a>
+								<div>
+									<h6 class="mb-1">Chat with Khelesh</h6>
+									<p class="mb-0 text-success">Online</p>
+								</div>							
+								<div class="dropdown">
+									<a href="portofolio.html#" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
+									<ul class="dropdown-menu dropdown-menu-right">
+										<li class="dropdown-item"><i class="fa fa-user-circle text-primary me-2"></i> View profile</li>
+										<li class="dropdown-item"><i class="fa fa-users text-primary me-2"></i> Add to close friends</li>
+										<li class="dropdown-item"><i class="fa fa-plus text-primary me-2"></i> Add to group</li>
+										<li class="dropdown-item"><i class="fa fa-ban text-primary me-2"></i> Block</li>
+									</ul>
+								</div>
+							</div>
+							<div class="card-body msg_card_body dz-scroll" id="DZ_W_Contacts_Body3">
+								<div class="d-flex justify-content-start mb-4">
+									<div class="img_cont_msg">
+										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+									<div class="msg_cotainer">
+										Hi, how are you samim?
+										<span class="msg_time">8:40 AM, Today</span>
+									</div>
+								</div>
+								<div class="d-flex justify-content-end mb-4">
+									<div class="msg_cotainer_send">
+										Hi Khalid i am good tnx how about you?
+										<span class="msg_time_send">8:55 AM, Today</span>
+									</div>
+									<div class="img_cont_msg">
+								<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+								</div>
+								<div class="d-flex justify-content-start mb-4">
+									<div class="img_cont_msg">
+										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+									<div class="msg_cotainer">
+										I am good too, thank you for your chat template
+										<span class="msg_time">9:00 AM, Today</span>
+									</div>
+								</div>
+								<div class="d-flex justify-content-end mb-4">
+									<div class="msg_cotainer_send">
+										You are welcome
+										<span class="msg_time_send">9:05 AM, Today</span>
+									</div>
+									<div class="img_cont_msg">
+								<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+								</div>
+								<div class="d-flex justify-content-start mb-4">
+									<div class="img_cont_msg">
+										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+									<div class="msg_cotainer">
+										I am looking for your next templates
+										<span class="msg_time">9:07 AM, Today</span>
+									</div>
+								</div>
+								<div class="d-flex justify-content-end mb-4">
+									<div class="msg_cotainer_send">
+										Ok, thank you have a good day
+										<span class="msg_time_send">9:10 AM, Today</span>
+									</div>
+									<div class="img_cont_msg">
+										<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+								</div>
+								<div class="d-flex justify-content-start mb-4">
+									<div class="img_cont_msg">
+										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+									<div class="msg_cotainer">
+										Bye, see you
+										<span class="msg_time">9:12 AM, Today</span>
+									</div>
+								</div>
+								<div class="d-flex justify-content-start mb-4">
+									<div class="img_cont_msg">
+										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+									<div class="msg_cotainer">
+										Hi, how are you samim?
+										<span class="msg_time">8:40 AM, Today</span>
+									</div>
+								</div>
+								<div class="d-flex justify-content-end mb-4">
+									<div class="msg_cotainer_send">
+										Hi Khalid i am good tnx how about you?
+										<span class="msg_time_send">8:55 AM, Today</span>
+									</div>
+									<div class="img_cont_msg">
+								<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+								</div>
+								<div class="d-flex justify-content-start mb-4">
+									<div class="img_cont_msg">
+										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+									<div class="msg_cotainer">
+										I am good too, thank you for your chat template
+										<span class="msg_time">9:00 AM, Today</span>
+									</div>
+								</div>
+								<div class="d-flex justify-content-end mb-4">
+									<div class="msg_cotainer_send">
+										You are welcome
+										<span class="msg_time_send">9:05 AM, Today</span>
+									</div>
+									<div class="img_cont_msg">
+								<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+								</div>
+								<div class="d-flex justify-content-start mb-4">
+									<div class="img_cont_msg">
+										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+									<div class="msg_cotainer">
+										I am looking for your next templates
+										<span class="msg_time">9:07 AM, Today</span>
+									</div>
+								</div>
+								<div class="d-flex justify-content-end mb-4">
+									<div class="msg_cotainer_send">
+										Ok, thank you have a good day
+										<span class="msg_time_send">9:10 AM, Today</span>
+									</div>
+									<div class="img_cont_msg">
+										<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+								</div>
+								<div class="d-flex justify-content-start mb-4">
+									<div class="img_cont_msg">
+										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt=""/>
+									</div>
+									<div class="msg_cotainer">
+										Bye, see you
+										<span class="msg_time">9:12 AM, Today</span>
+									</div>
+								</div>
+							</div>
+							<div class="card-footer type_msg">
+								<div class="input-group">
+									<textarea class="form-control" placeholder="Type your message..."></textarea>
+									<div class="input-group-append">
+										<button type="button" class="btn btn-primary"><i class="fa fa-location-arrow"></i></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="alerts" role="tabpanel">
+						<div class="card mb-sm-3 mb-md-0 contacts_card">
+							<div class="card-header chat-list-header text-center">
+								<a href="portofolio.html#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
+								<div>
+									<h6 class="mb-1">Notications</h6>
+									<p class="mb-0">Show All</p>
+								</div>
+								<a href="portofolio.html#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/><path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"/></g></svg></a>
+							</div>
+							<div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body1">
+								<ul class="contacts">
+									<li class="name-first-letter">SEVER STATUS</li>
+									<li class="active">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont primary">KK</div>
+											<div class="user_info">
+												<span>David Nester Birthday</span>
+												<p class="text-primary">Today</p>
+											</div>
+										</div>
+									</li>
+									<li class="name-first-letter">SOCIAL</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="img_cont success">RU</div>
+											<div class="user_info">
+												<span>Perfection Simplified</span>
+												<p>Jame Smith commented on your status</p>
+											</div>
+										</div>
+									</li>
+									<li class="name-first-letter">SEVER STATUS</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="img_cont primary">AU</div>
+											<div class="user_info">
+												<span>AharlieKane</span>
+												<p>Sami is online</p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="img_cont info">MO</div>
+											<div class="user_info">
+												<span>Athan Jacoby</span>
+												<p>Nargis left 30 mins ago</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="card-footer"></div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="notes">
+						<div class="card mb-sm-3 mb-md-0 note_card">
+							<div class="card-header chat-list-header text-center">
+								<a href="portofolio.html#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
+								<div>
+									<h6 class="mb-1">Notes</h6>
+									<p class="mb-0">Add New Nots</p>
+								</div>
+								<a href="portofolio.html#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/><path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"/></g></svg></a>
+							</div>
+							<div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body2">
+								<ul class="contacts">
+									<li class="active">
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>New order placed..</span>
+												<p>10 Aug 2020</p>
+											</div>
+											<div class="ms-auto">
+												<a href="portofolio.html#" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+												<a href="portofolio.html#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>Youtube, a video-sharing website..</span>
+												<p>10 Aug 2020</p>
+											</div>
+											<div class="ms-auto">
+												<a href="portofolio.html#" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+												<a href="portofolio.html#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>john just buy your product..</span>
+												<p>10 Aug 2020</p>
+											</div>
+											<div class="ms-auto">
+												<a href="portofolio.html#" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+												<a href="portofolio.html#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>Athan Jacoby</span>
+												<p>10 Aug 2020</p>
+											</div>
+											<div class="ms-auto">
+												<a href="portofolio.html#" class="btn btn-primary btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+												<a href="portofolio.html#" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--**********************************
+            Chat box End
+        ***********************************-->
+		
+		<!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="dashboard_bar">
+                                Portofolio
+                            </div>
+                        </div>
+
+                        <ul class="navbar-nav header-right">
+							<li class="nav-item">
+								<div class="input-group search-area d-xl-inline-flex d-none">
+									<div class="input-group-append">
+										<button class="input-group-text"><i class="flaticon-381-search-2"></i></button>
+									</div>
+									<input type="text" class="form-control" placeholder="Search here...">
+								</div>
+							</li>
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link  ai-icon" href="portofolio.html#" role="button" data-bs-toggle="dropdown">
+                                    <i class="flaticon-381-ring"></i>
+                                    <div class="pulse-css"></div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div id="DZ_W_Notification1" class="widget-media dz-scroll p-3" style="height:380px;">
+										<ul class="timeline">
+											<li>
+												<div class="timeline-panel">
+													<div class="media me-2">
+														<img alt="image" width="50" src="images/avatar/1.jpg">
+													</div>
+													<div class="media-body">
+														<h6 class="mb-1">Dr sultads Send you Photo</h6>
+														<small class="d-block">29 July 2020 - 02:26 PM</small>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="timeline-panel">
+													<div class="media me-2 media-info">
+														KG
+													</div>
+													<div class="media-body">
+														<h6 class="mb-1">Resport created successfully</h6>
+														<small class="d-block">29 July 2020 - 02:26 PM</small>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="timeline-panel">
+													<div class="media me-2 media-success">
+														<i class="fa fa-home"></i>
+													</div>
+													<div class="media-body">
+														<h6 class="mb-1">Reminder : Treatment Time!</h6>
+														<small class="d-block">29 July 2020 - 02:26 PM</small>
+													</div>
+												</div>
+											</li>
+											 <li>
+												<div class="timeline-panel">
+													<div class="media me-2">
+														<img alt="image" width="50" src="images/avatar/1.jpg">
+													</div>
+													<div class="media-body">
+														<h6 class="mb-1">Dr sultads Send you Photo</h6>
+														<small class="d-block">29 July 2020 - 02:26 PM</small>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="timeline-panel">
+													<div class="media me-2 media-danger">
+														KG
+													</div>
+													<div class="media-body">
+														<h6 class="mb-1">Resport created successfully</h6>
+														<small class="d-block">29 July 2020 - 02:26 PM</small>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="timeline-panel">
+													<div class="media me-2 media-primary">
+														<i class="fa fa-home"></i>
+													</div>
+													<div class="media-body">
+														<h6 class="mb-1">Reminder : Treatment Time!</h6>
+														<small class="d-block">29 July 2020 - 02:26 PM</small>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+                                    <a class="all-notification" href="portofolio.html#">See all notifications <i class="ti-arrow-right"></i></a>
+                                </div>
+                            </li>
+							<li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link bell bell-link" href="portofolio.html#">
+                                    <i class="flaticon-381-pad"></i>
+									<div class="pulse-css"></div>
+                                </a>
+							</li>
+							<li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link" href="portofolio.html#" data-bs-toggle="dropdown">
+									<i class="flaticon-381-gift"></i>
+									<div class="pulse-css"></div>
+                                </a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<div id="DZ_W_TimeLine02" class="widget-timeline dz-scroll style-1 ps ps--active-y p-3 height370">
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="timeline-badge primary"></div>
+                                            <a class="timeline-panel text-muted" href="portofolio.html#">
+                                                <span>10 minutes ago</span>
+                                                <h6 class="mb-0">Youtube, a video-sharing website, goes live <strong class="text-primary">$500</strong>.</h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge info">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="portofolio.html#">
+                                                <span>20 minutes ago</span>
+                                                <h6 class="mb-0">New order placed <strong class="text-info">#XF-2356.</strong></h6>
+												<p class="mb-0">Quisque a consequat ante Sit amet magna at volutapt...</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge danger">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="portofolio.html#">
+                                                <span>30 minutes ago</span>
+                                                <h6 class="mb-0">john just buy your product <strong class="text-warning">Sell $250</strong></h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge success">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="portofolio.html#">
+                                                <span>15 minutes ago</span>
+                                                <h6 class="mb-0">StumbleUpon is acquired by eBay. </h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge warning">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="portofolio.html#">
+                                                <span>20 minutes ago</span>
+                                                <h6 class="mb-0">Mashable, a news website and blog, goes live.</h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge dark">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="portofolio.html#">
+                                                <span>20 minutes ago</span>
+                                                <h6 class="mb-0">Mashable, a news website and blog, goes live.</h6>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+								</div>
+							</li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="portofolio.html#" role="button" data-bs-toggle="dropdown">
+                                    <img src="images/profile/pic1.jpg" width="20" alt=""/>
+									<div class="header-info">
+										<span>Johndoe</span>
+										<small>Super Admin</small>
+									</div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="app-profile.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ms-2">Profile </span>
+                                    </a>
+                                    <a href="email-inbox.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                        <span class="ms-2">Inbox </span>
+                                    </a>
+                                    <a href="page-login.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ms-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
+				<ul class="metismenu" id="menu">
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-networking"></i>
+							<span class="nav-text">Dashboard</span>
+						</a>
+						<ul aria-expanded="false">
+							<li><a href="index.html">Dashboard &nbsp; 1</a></li>
+							<li><a href="index-2.html">Dashboard &nbsp; 2</a></li>
+							<li><a href="index-3.html">Dashboard &nbsp; 3</a></li>
+							<li><a href="index-4.html">Dashboard Dark</a></li>
+							<li><a href="coin-details.html">Coin Details</a></li>
+							<li><a href="my-wallets.html">My Wallets</a></li>
+							<li><a href="transactions.html">Transactions</a></li>
+							<li><a href="portofolio.html">Portofolio</a></li>
+							<li><a href="market-capital.html">Market Capital</a></li>
+						</ul>
+
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="flaticon-381-television"></i>
+							<span class="nav-text">Apps</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="app-profile.html">Profile</a></li>
+							<li><a href="post-details.html">Post Details</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="email-compose.html">Compose</a></li>
+                                    <li><a href="email-inbox.html">Inbox</a></li>
+                                    <li><a href="email-read.html">Read</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="app-calender.html">Calendar</a></li>
+							<li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="ecom-product-grid.html">Product Grid</a></li>
+									<li><a href="ecom-product-list.html">Product List</a></li>
+									<li><a href="ecom-product-detail.html">Product Details</a></li>
+									<li><a href="ecom-product-order.html">Order</a></li>
+									<li><a href="ecom-checkout.html">Checkout</a></li>
+									<li><a href="ecom-invoice.html">Invoice</a></li>
+									<li><a href="ecom-customers.html">Customers</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-controls-3"></i>
+							<span class="nav-text">Charts</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="chart-flot.html">Flot</a></li>
+                            <li><a href="chart-morris.html">Morris</a></li>
+                            <li><a href="chart-chartjs.html">Chartjs</a></li>
+                            <li><a href="chart-chartist.html">Chartist</a></li>
+                            <li><a href="chart-sparkline.html">Sparkline</a></li>
+                            <li><a href="chart-peity.html">Peity</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-internet"></i>
+							<span class="nav-text">Bootstrap</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="ui-accordion.html">Accordion</a></li>
+                            <li><a href="ui-alert.html">Alert</a></li>
+                            <li><a href="ui-badge.html">Badge</a></li>
+                            <li><a href="ui-button.html">Button</a></li>
+                            <li><a href="ui-modal.html">Modal</a></li>
+                            <li><a href="ui-button-group.html">Button Group</a></li>
+                            <li><a href="ui-list-group.html">List Group</a></li>
+                            <li><a href="ui-media-object.html">Media Object</a></li>
+                            <li><a href="ui-card.html">Cards</a></li>
+                            <li><a href="ui-carousel.html">Carousel</a></li>
+                            <li><a href="ui-dropdown.html">Dropdown</a></li>
+                            <li><a href="ui-popover.html">Popover</a></li>
+                            <li><a href="ui-progressbar.html">Progressbar</a></li>
+                            <li><a href="ui-tab.html">Tab</a></li>
+                            <li><a href="ui-typography.html">Typography</a></li>
+                            <li><a href="ui-pagination.html">Pagination</a></li>
+                            <li><a href="ui-grid.html">Grid</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-heart"></i>
+							<span class="nav-text">Plugins</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="uc-select2.html">Select 2</a></li>
+                            <li><a href="uc-nestable.html">Nestedable</a></li>
+                            <li><a href="uc-noui-slider.html">Noui Slider</a></li>
+                            <li><a href="uc-sweetalert.html">Sweet Alert</a></li>
+                            <li><a href="uc-toastr.html">Toastr</a></li>
+                            <li><a href="map-jqvmap.html">Jqv Map</a></li>
+							<li><a href="uc-lightgallery.html">Light Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
+							<i class="flaticon-381-settings-2"></i>
+							<span class="nav-text">Widget</span>
+						</a>
+					</li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-notepad"></i>
+							<span class="nav-text">Forms</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="form-element.html">Form Elements</a></li>
+                            <li><a href="form-wizard.html">Wizard</a></li>
+                            <li><a href="form-editor-summernote.html">Summernote</a></li>
+                            <li><a href="form-pickers.html">Pickers</a></li>
+                            <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-network"></i>
+							<span class="nav-text">Table</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
+                            <li><a href="table-datatable-basic.html">Datatable</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-layer-1"></i>
+							<span class="nav-text">Pages</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="page-register.html">Register</a></li>
+                            <li><a href="page-login.html">Login</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="page-error-400.html">Error 400</a></li>
+                                    <li><a href="page-error-403.html">Error 403</a></li>
+                                    <li><a href="images/svg/cd-arrow.svg">Error 404</a></li>
+                                    <li><a href="page-error-500.html">Error 500</a></li>
+                                    <li><a href="page-error-503.html">Error 503</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="page-lock-screen.html">Lock Screen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            
+				<div class="book-box">
+					<img src="images/book.png" alt="">
+					<a href="javascript:void(0);">Generate Report  ></a>
+				</div>
+				<div class="copyright">
+					<p><strong>Kripton Crypto Admin Dashboard</strong> © 2022 All Rights Reserved</p>
+					<p class="fs-12">Made with <span class="heart"></span> by DexignZone</p>
+				</div>
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+		
+		<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-3 col-xxl-4">
+						<div class="card">
+							<div class="card-header pb-0 border-0">
+								<h5 class="mb-0 text-black fs-20">My Profile</h5>
+								<div class="dropdown ms-auto">
+                                    <div class="btn-link" data-bs-toggle="dropdown">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g></svg>
+                                    </div>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="portofolio.html#">Edit</a>
+                                        <a class="dropdown-item" href="portofolio.html#">Delete</a>
+                                    </div>
+                                </div>
+							</div>
+							<div class="card-body">
+								<div class="text-center">
+									<img src="images/profile/11.jpg" alt= "" class="rounded ds-img-profile">
+									<h4 class="fs-26 mt-sm-3 mt-2 mb-sm-3 mb-0 font-w600 text-black">Johndoe</h4>	
+									<p class="mb-0 text-black ">Join on 24 March 2017</p>
+									<a href="javascript:void(0);" class="btn btn-rounded btn-outline-primary mt-sm-4 mt-2"><i class="fas fa-pencil-alt scale5 me-3"></i>Edit prorfile</a>
+								</div>
+								<ul class="d-flex justify-content-center share-icon mt-sm-4 mt-3">
+									<li><a href="javascript:void(0);"><i class="las la-phone"></i></a></li>
+									<li><a href="javascript:void(0);"><i class="las la-envelope"></i></a></li>
+									<li><a href="javascript:void(0);"><i class="lab la-facebook-f"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-9 col-xxl-8">
+						<div class="card">
+							<div class="card-header border-0 pb-0">
+								<h5 class="mb-0 text-black fs-20">Coin Holding</h5>
+								<div class="dropdown ms-auto">
+                                    <div class="btn-link" data-bs-toggle="dropdown">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g></svg>
+                                    </div>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="portofolio.html#">Edit</a>
+                                        <a class="dropdown-item" href="portofolio.html#">Delete</a>
+                                    </div>
+                                </div>
+							</div>
+							<div class="card-body">
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="card border coin-holding-card border-secondary">
+											<div class="card-body bg-secondary rounded">
+												<div class="d-flex align-items-center">
+													<svg class="me-3" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M21.5567 23.893C21.1992 24.0359 20.8009 24.0359 20.4434 23.893L16.6064 22.3582L21.0001 31.1454L25.3937 22.3582L21.5567 23.893Z" fill="white"/>
+														<path d="M20.9998 20.8846L26.2769 18.7739L20.9998 10.3304L15.7227 18.7739L20.9998 20.8846Z" fill="white"/>
+														<path d="M20.9999 0.00012207C9.40201 0.00012207 0 9.40213 0 21C0 32.5979 9.40201 41.9999 20.9999 41.9999C32.5978 41.9999 41.9998 32.5979 41.9998 21C41.987 9.40762 32.5923 0.0129395 20.9999 0.00012207ZM29.8416 20.171L22.3416 35.171C21.9713 35.9121 21.0699 36.2124 20.3293 35.8421C20.0386 35.697 19.8033 35.4617 19.6582 35.171L12.1582 20.171C11.9252 19.7032 11.9518 19.1479 12.2282 18.7043L19.7282 6.70453C20.2267 6.00232 21.1995 5.83661 21.9017 6.33511C22.045 6.43674 22.17 6.56125 22.2716 6.70453L29.7711 18.7043C30.0481 19.1479 30.0746 19.7032 29.8416 20.171Z" fill="white"/>
+													</svg>
+													<div>
+														<h4 class="font-w500 text-white title mb-0">Ethereum</h4>
+														<span class="text-white fs-14 op7">ETH</span>
+													</div>
+												</div>
+												<div class="d-flex flex-wrap mt-4 align-items-center">	
+													<div class="d-flex align-items-center me-auto pr-3 mb-2">
+														<svg class="me-3" width="42" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="3.42856" height="25.1428" rx="1.71428" transform="matrix(-1 0 0 1 24 0)" fill="white"/>
+															<rect width="3.42856" height="18.2856" rx="1.71428" transform="matrix(-1 0 0 1 17.1431 6.85712)" fill="white"/>
+															<rect width="3.42856" height="7.99997" rx="1.71428" transform="matrix(-1 0 0 1 10.2861 17.1428)" fill="white"/>
+															<rect width="3.86812" height="15.4725" rx="1.93406" transform="matrix(-1 0 0 1 3.86816 9.67029)" fill="white"/>
+														</svg>
+														<h4 class="font-w500 text-white amount mb-0">$168,331.09</h4>
+													</div>
+													<div class="mb-2">
+														<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0.707108 6.06712C0.0771426 6.69709 0.523309 7.77423 1.41421 7.77423L12.3601 7.77423C13.251 7.77423 13.6972 6.69709 13.0672 6.06712L7.59426 0.594186C7.20373 0.203662 6.57057 0.203662 6.18005 0.594186L0.707108 6.06712Z" fill="#61C277"/>
+														</svg>
+														<span class="text-white fs-14">45% This Week</span>
+													</div>
+												</div>	
+											</div>
+											<div class="card-footer d-flex justify-content-between border-0">
+												<div class="footer-info font-w600">
+													<span class="text-success pr-2">BUY</span>
+													<span class="text-black">$5,673</span>
+												</div>
+												<div class="footer-info font-w600">
+													<span class="text-danger pr-2">SELL</span>
+													<span class="text-black">$5,982</span>
+												</div>
+												<a href="javascript:void(0);" class="underline text-primary font-w500 footer-info">More Details</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="card border coin-holding-card border-warning">
+											<div class="card-body bg-warning rounded">
+												<div class="d-flex align-items-center">
+													<svg class="me-3" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M28.4998 16.5002C28.4984 14.844 27.1558 13.5018 25.5001 13.5H16.5V19.4999H25.5001C27.1558 19.4985 28.4984 18.1559 28.4998 16.5002Z" fill="white"/>
+														<path d="M16.5 28.5H25.5001C27.1567 28.5 28.4998 27.157 28.4998 25.5003C28.4998 23.8432 27.1567 22.5001 25.5001 22.5001H16.5V28.5Z" fill="white"/>
+														<path d="M20.9999 0.00012207C9.40201 0.00012207 0 9.40213 0 21C0 32.5979 9.40201 41.9999 20.9999 41.9999C32.5978 41.9999 41.9998 32.5979 41.9998 21C41.9865 9.40762 32.5923 0.0133972 20.9999 0.00012207ZM31.5001 25.4998C31.496 28.8122 28.8121 31.4961 25.5002 31.4998V32.9998C25.5002 33.8284 24.8282 34.4999 24.0001 34.4999C23.1715 34.4999 22.5 33.8284 22.5 32.9998V31.4998H19.5003V32.9998C19.5003 33.8284 18.8283 34.4999 18.0002 34.4999C17.1716 34.4999 16.5001 33.8284 16.5001 32.9998V31.4998H12.0003C11.1717 31.4998 10.5002 30.8282 10.5002 30.0001C10.5002 29.1716 11.1717 28.5 12.0003 28.5H13.4999V13.5H12.0003C11.1717 13.5 10.5002 12.8285 10.5002 11.9999C10.5002 11.1714 11.1717 10.4998 12.0003 10.4998H16.5001V9.00021C16.5001 8.17166 17.1716 7.50012 18.0002 7.50012C18.8287 7.50012 19.5003 8.17166 19.5003 9.00021V10.4998H22.5V9.00021C22.5 8.17166 23.1715 7.50012 24.0001 7.50012C24.8286 7.50012 25.5002 8.17166 25.5002 9.00021V10.4998C28.7997 10.4861 31.4859 13.1494 31.5001 16.4489C31.5074 18.1962 30.7498 19.8593 29.4264 21C30.7375 22.128 31.4941 23.77 31.5001 25.4998Z" fill="white"/>
+													</svg>
+													<div>
+														<h4 class="font-w500 text-white title mb-0">Bitcoin</h4>
+														<span class="text-white fs-14 op7">BTC</span>
+													</div>
+												</div>
+												<div class="d-flex flex-wrap mt-4 align-items-center">	
+													<div class="d-flex align-items-center me-auto pr-3 mb-2">
+														<svg class="me-3" width="42" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="3.42856" height="25.1428" rx="1.71428" transform="matrix(-1 0 0 1 24 0)" fill="white"/>
+															<rect width="3.42856" height="18.2856" rx="1.71428" transform="matrix(-1 0 0 1 17.1431 6.85712)" fill="white"/>
+															<rect width="3.42856" height="7.99997" rx="1.71428" transform="matrix(-1 0 0 1 10.2861 17.1428)" fill="white"/>
+															<rect width="3.86812" height="15.4725" rx="1.93406" transform="matrix(-1 0 0 1 3.86816 9.67029)" fill="white"/>
+														</svg>
+														<h4 class="font-w500 text-white amount mb-0">$168,331.09</h4>
+													</div>
+													<div class="mb-2">
+														<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0.707108 6.06712C0.0771426 6.69709 0.523309 7.77423 1.41421 7.77423L12.3601 7.77423C13.251 7.77423 13.6972 6.69709 13.0672 6.06712L7.59426 0.594186C7.20373 0.203662 6.57057 0.203662 6.18005 0.594186L0.707108 6.06712Z" fill="#61C277"/>
+														</svg>
+														<span class="text-white fs-14">45% This Week</span>
+													</div>
+												</div>	
+											</div>
+											<div class="card-footer d-flex justify-content-between border-0">
+												<div class="footer-info font-w600">
+													<span class="text-success pr-2">BUY</span>
+													<span class="text-black">$5,673</span>
+												</div>
+												<div class="footer-info font-w600">
+													<span class="text-danger pr-2">SELL</span>
+													<span class="text-black">$5,982</span>
+												</div>
+												<a href="javascript:void(0);" class="underline text-primary font-w500 footer-info">More Details</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="card border coin-holding-card border-info">
+											<div class="card-body bg-info rounded">
+												<div class="d-flex align-items-center">
+													<svg class="me-3" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M20.9999 0.00012207C9.40201 0.00012207 0 9.40213 0 21C0 32.5979 9.40201 41.9999 20.9999 41.9999C32.5978 41.9999 41.9998 32.5979 41.9998 21C41.987 9.40762 32.5923 0.0129395 20.9999 0.00012207ZM12.328 19.4999H18.3279C19.1565 19.4999 19.828 20.1715 19.828 21C19.828 21.8286 19.1565 22.5001 18.3279 22.5001H12.328C11.4995 22.5001 10.8279 21.8286 10.8279 21C10.8279 20.1715 11.4999 19.4999 12.328 19.4999ZM31.084 17.3658L29.2799 26.392C28.8551 28.4872 27.0154 29.9951 24.8776 30.0001H12.328C11.4995 30.0001 10.8279 29.3286 10.8279 28.5C10.8279 27.6715 11.4999 26.9999 12.328 26.9999H24.8776C25.5867 26.9981 26.1969 26.4982 26.3379 25.8033L28.1424 16.7772C28.3026 15.9715 27.7798 15.1887 26.9746 15.0285C26.879 15.0097 26.7819 15.0001 26.6849 15.0001H15.3282C14.4997 15.0001 13.8281 14.3286 13.8281 13.5C13.8281 12.6715 14.4997 11.9999 15.3282 11.9999H26.6849C29.1632 12.0009 31.1714 14.01 31.171 16.4883C31.171 16.7827 31.1417 17.0765 31.084 17.3658Z" fill="white"/>
+													</svg>
+													<div>
+														<h4 class="font-w500 text-white title mb-0">Digital Cash</h4>
+														<span class="text-white fs-14 op7">DASH</span>
+													</div>
+												</div>
+												<div class="d-flex flex-wrap mt-4 align-items-center">	
+													<div class="d-flex align-items-center me-auto pr-3 mb-2">
+														<svg class="me-3" width="42" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="3.42856" height="25.1428" rx="1.71428" transform="matrix(-1 0 0 1 24 0)" fill="white"/>
+															<rect width="3.42856" height="18.2856" rx="1.71428" transform="matrix(-1 0 0 1 17.1431 6.85712)" fill="white"/>
+															<rect width="3.42856" height="7.99997" rx="1.71428" transform="matrix(-1 0 0 1 10.2861 17.1428)" fill="white"/>
+															<rect width="3.86812" height="15.4725" rx="1.93406" transform="matrix(-1 0 0 1 3.86816 9.67029)" fill="white"/>
+														</svg>
+														<h4 class="font-w500 text-white amount mb-0">$168,331.09</h4>
+													</div>
+													<div class="mb-2">
+														<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0.707108 6.06712C0.0771426 6.69709 0.523309 7.77423 1.41421 7.77423L12.3601 7.77423C13.251 7.77423 13.6972 6.69709 13.0672 6.06712L7.59426 0.594186C7.20373 0.203662 6.57057 0.203662 6.18005 0.594186L0.707108 6.06712Z" fill="#61C277"/>
+														</svg>
+														<span class="text-white fs-14">45% This Week</span>
+													</div>
+												</div>	
+											</div>
+											<div class="card-footer d-flex justify-content-between border-0">
+												<div class="footer-info font-w600">
+													<span class="text-success pr-2">BUY</span>
+													<span class="text-black">$5,673</span>
+												</div>
+												<div class="footer-info font-w600">
+													<span class="text-danger pr-2">SELL</span>
+													<span class="text-black">$5,982</span>
+												</div>
+												<a href="javascript:void(0);" class="underline text-primary font-w500 footer-info">More Details</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="card border coin-holding-card border-primary">
+											<div class="card-body bg-primary rounded">
+												<div class="d-flex align-items-center">
+													<svg class="me-3" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M20.9999 0.00012207C9.40201 0.00012207 0 9.40213 0 21C0 32.5979 9.40201 41.9999 20.9999 41.9999C32.5978 41.9999 41.9998 32.5979 41.9998 21C41.987 9.40762 32.5923 0.0129395 20.9999 0.00012207ZM26.9998 30.0001H22.5V34.4999C22.5 35.3285 21.8285 36 20.9999 36C20.1714 36 19.4998 35.3285 19.4998 34.4999V30.0001H15C14.1714 30.0006 13.4995 29.3295 13.499 28.5009C13.499 28.1599 13.6148 27.8289 13.8281 27.5625L23.8783 15.0001H15C14.1714 15.0001 13.4999 14.3286 13.4999 13.5C13.4999 12.6715 14.1714 11.9999 15 11.9999H19.4998V7.50012C19.4998 6.67157 20.1714 6.00003 20.9999 6.00003C21.8285 6.00003 22.5 6.67203 22.5 7.50012V11.9999H26.9998C27.8293 12.0013 28.5004 12.6747 28.4995 13.5037C28.499 13.8429 28.3832 14.1725 28.1717 14.4375L18.1215 26.9999H26.9998C27.8284 26.9999 28.4999 27.6719 28.4999 28.5C28.4999 29.3286 27.8284 30.0001 26.9998 30.0001Z" fill="white"/>
+													</svg>
+													<div>
+														<h4 class="font-w500 text-white title mb-0">Zcash</h4>
+														<span class="text-white fs-14 op7">ZEC</span>
+													</div>
+												</div>
+												<div class="d-flex flex-wrap mt-4 align-items-center">	
+													<div class="d-flex align-items-center me-auto pr-3 mb-2">
+														<svg class="me-3" width="42" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="3.42856" height="25.1428" rx="1.71428" transform="matrix(-1 0 0 1 24 0)" fill="white"/>
+															<rect width="3.42856" height="18.2856" rx="1.71428" transform="matrix(-1 0 0 1 17.1431 6.85712)" fill="white"/>
+															<rect width="3.42856" height="7.99997" rx="1.71428" transform="matrix(-1 0 0 1 10.2861 17.1428)" fill="white"/>
+															<rect width="3.86812" height="15.4725" rx="1.93406" transform="matrix(-1 0 0 1 3.86816 9.67029)" fill="white"/>
+														</svg>
+														<h4 class="font-w500 text-white amount mb-0">$168,331.09</h4>
+													</div>
+													<div class="mb-2">
+														<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M0.707108 6.06712C0.0771426 6.69709 0.523309 7.77423 1.41421 7.77423L12.3601 7.77423C13.251 7.77423 13.6972 6.69709 13.0672 6.06712L7.59426 0.594186C7.20373 0.203662 6.57057 0.203662 6.18005 0.594186L0.707108 6.06712Z" fill="#61C277"/>
+														</svg>
+														<span class="text-white fs-14">45% This Week</span>
+													</div>
+												</div>	
+											</div>
+											<div class="card-footer d-flex justify-content-between border-0">
+												<div class="footer-info font-w600">
+													<span class="text-success pr-2">BUY</span>
+													<span class="text-black">$5,673</span>
+												</div>
+												<div class="footer-info font-w600">
+													<span class="text-danger pr-2">SELL</span>
+													<span class="text-black">$5,982</span>
+												</div>
+												<a href="javascript:void(0);" class="underline text-primary font-w500 footer-info">More Details</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-6">
+						<div class="row">
+							<div class="col-xl-6 col-xxl-12 col-md-6">
+								<div class="card">
+									<div class="card-header border-0 pb-0">
+										<h4 class="fs-20 text-black">Current Graph</h4>
+										<div class="dropdown ms-auto">
+                                            <div class="btn-link" data-bs-toggle="dropdown">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g></svg>
+                                            </div>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="portofolio.html#">Edit</a>
+                                                <a class="dropdown-item" href="portofolio.html#">Delete</a>
+                                            </div>
+                                        </div>
+									</div>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-xl-12 col-sm-12 d-flex justify-content-center">
+												<div id="pieChart"></div>
+											</div>
+											<div class=" col-xl-12 col-sm-12">
+												<div class="row text-black fs-13 mt-4">
+													<span class="mb-3 col-6">
+														<svg class="me-2" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="14" height="14" rx="4" fill="#3C8AFF"/>
+														</svg>
+														Food
+													</span>
+													<span class="mb-3 col-6">
+														<svg class="me-2" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="14" height="14" rx="4" fill="#FF5166"/>
+														</svg>
+														Rent
+													</span>
+													<span class="mb-3 col-6">
+														<svg class="me-2" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="14" height="14" rx="4" fill="#ED3DD1"/>
+														</svg>
+														Transport
+													</span>
+													<span class="mb-3 col-6">
+														<svg class="me-2" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="14" height="14" rx="4" fill="#2BC844"/>
+														</svg>
+														Installment
+													</span>
+													<span class="mb-3 col-6">
+														<svg class="me-2" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<rect width="14" height="14" rx="4" fill="#FFEE54"/>
+														</svg>
+														Investment
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-6 col-xxl-12 col-md-6">
+								<div class="card">
+									<div class="card-header border-0 pb-0">
+										<h4 class="fs-20 text-black">Current Graph</h4>
+										<div class="dropdown ms-auto">
+                                            <div class="btn-link" data-bs-toggle="dropdown">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="12" cy="5" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="19" r="2"></circle></g></svg>
+                                            </div>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="portofolio.html#">Edit</a>
+                                                <a class="dropdown-item" href="portofolio.html#">Delete</a>
+                                            </div>
+                                        </div>
+									</div>
+									<div class="card-body">
+										<canvas id="lineChart2" height="300"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-6">
+						<div class="row">
+							<div class="col-xl-12">
+								<div class="card">
+									<div class="card-header flex-wrap d-block d-sm-flex border-0 pb-2">
+										<div class="mb-3">
+											<h4 class="fs-20 text-black">Wallet Activity</h4>
+											<p class="mb-0 fs-13">Lorem ipsum dolor sit amet, consectetur</p>
+										</div>
+										<div class="card-action card-tabs mb-3">
+											<ul class="nav nav-tabs" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active" data-bs-toggle="tab" href="portofolio.html#monthly" role="tab">
+														Monthly	
+													</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" data-bs-toggle="tab" href="portofolio.html#Weekly" role="tab">
+														Weekly
+													</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" data-bs-toggle="tab" href="portofolio.html#Today" role="tab">
+														Today
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="card-body tab-content p-0">
+										<div class="tab-pane active show fade" id="monthly" role="tabpanel">
+											<div class="table-responsive">
+												<table class="table shadow-hover short-one card-table border-no">
+													<tbody>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Withdraw</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">+$5,553</span>
+															</td>
+															<td><a class="btn-link text-light float-end" href="javascript:void(0);">Pending</a></td>
+														</tr>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M5.9375 6.232L5.9375 24.875C5.9375 25.6689 6.58107 26.3125 7.375 26.3125C8.16892 26.3125 8.8125 25.6689 8.8125 24.875L8.8125 6.23202L11.2311 8.66232L11.2311 8.66234C11.7911 9.22504 12.7013 9.2272 13.264 8.66718C13.8269 8.10702 13.8288 7.19681 13.2689 6.63421L12.9145 6.98691L13.2689 6.63421L8.3939 1.73558L8.38872 1.73037L8.38704 1.72878C7.82626 1.17281 6.92186 1.17469 6.36301 1.72877L6.36136 1.73033L6.35609 1.73563L1.48109 6.63426L1.48108 6.63426C0.921124 7.19695 0.9232 8.10709 1.48597 8.6672C2.04868 9.22725 2.95884 9.22509 3.51889 8.66239L3.51891 8.66236L5.9375 6.232Z" fill="#363062" stroke="#363062"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Topup</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">+$5,553</span>
+															</td>
+															<td>
+																<a class="btn-link text-success float-end" href="javascript:void(0);">Completed</a>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Wihtdraw</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">-$912</span>
+															</td>
+															<td>
+																<a class="btn-link text-danger float-end" href="javascript:void(0);">Canceled</a>
+															</td>
+														</tr>
+														<tr>
+															<td>
+															<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M5.9375 6.232L5.9375 24.875C5.9375 25.6689 6.58107 26.3125 7.375 26.3125C8.16892 26.3125 8.8125 25.6689 8.8125 24.875L8.8125 6.23202L11.2311 8.66232L11.2311 8.66234C11.7911 9.22504 12.7013 9.2272 13.264 8.66718C13.8269 8.10702 13.8288 7.19681 13.2689 6.63421L12.9145 6.98691L13.2689 6.63421L8.3939 1.73558L8.38872 1.73037L8.38704 1.72878C7.82626 1.17281 6.92186 1.17469 6.36301 1.72877L6.36136 1.73033L6.35609 1.73563L1.48109 6.63426L1.48108 6.63426C0.921124 7.19695 0.9232 8.10709 1.48597 8.6672C2.04868 9.22725 2.95884 9.22509 3.51889 8.66239L3.51891 8.66236L5.9375 6.232Z" fill="#363062" stroke="#363062"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Topup</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">+$7,762</span>
+															</td>
+															<td>
+																<a class="btn-link text-success float-end" href="javascript:void(0);">Completed</a>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M5.9375 6.232L5.9375 24.875C5.9375 25.6689 6.58107 26.3125 7.375 26.3125C8.16892 26.3125 8.8125 25.6689 8.8125 24.875L8.8125 6.23202L11.2311 8.66232L11.2311 8.66234C11.7911 9.22504 12.7013 9.2272 13.264 8.66718C13.8269 8.10702 13.8288 7.19681 13.2689 6.63421L12.9145 6.98691L13.2689 6.63421L8.3939 1.73558L8.38872 1.73037L8.38704 1.72878C7.82626 1.17281 6.92186 1.17469 6.36301 1.72877L6.36136 1.73033L6.35609 1.73563L1.48109 6.63426L1.48108 6.63426C0.921124 7.19695 0.9232 8.10709 1.48597 8.6672C2.04868 9.22725 2.95884 9.22509 3.51889 8.66239L3.51891 8.66236L5.9375 6.232Z" fill="#363062" stroke="#363062"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Topup</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">+$5,553</span>
+															</td>
+															<td>
+																<a class="btn-link text-success float-end" href="javascript:void(0);">Completed</a>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Wihtdraw</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">-$912</span>
+															</td>
+															<td>
+																<a class="btn-link text-danger float-end" href="javascript:void(0);">Canceled</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="tab-pane" id="Weekly" role="tabpanel">
+											<div class="table-responsive">
+												<table class="table shadow-hover short-one  card-table  border-no">
+													<tbody>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Bitcoin</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">+$5,553</span>
+															</td>
+															<td><a class="btn-link text-success float-end" href="portofolio.html#">Completed</a></td>
+														</tr>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Ethereum</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">-$542</span>
+															</td>
+															<td>
+																<a class="btn-link text-dark float-end" href="portofolio.html#">Pending</a>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Ripple</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">-$912</span>
+															</td>
+															<td>
+																<a class="btn-link text-danger float-end" href="portofolio.html#">Canceled</a>
+															</td>
+														</tr>
+														
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Ripple</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">-$912</span>
+															</td>
+															<td>
+																<a class="btn-link text-danger float-end" href="portofolio.html#">Canceled</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="tab-pane" id="Today" role="tabpanel">
+											<div class="table-responsive">
+												<table class="table shadow-hover short-one card-table  border-no">
+													<tbody>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Bitcoin</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">+$5,553</span>
+															</td>
+															<td><a class="btn-link text-success float-end" href="portofolio.html#">Completed</a></td>
+														</tr>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Ethereum</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">-$542</span>
+															</td>
+															<td>
+																<a class="btn-link text-dark float-end" href="portofolio.html#">Pending</a>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Ripple</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">-$912</span>
+															</td>
+															<td>
+																<a class="btn-link text-danger float-end" href="portofolio.html#">Canceled</a>
+															</td>
+														</tr>
+														<tr>
+															<td>
+															<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Litecoin</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">+$7,762</span>
+															</td>
+															<td>
+																<a class="btn-link text-success float-end" href="portofolio.html#">Completed</a>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<span class="activity-icon">
+																	<svg width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path d="M8.81299 21.393L8.81299 2.74998C8.81299 1.95606 8.16942 1.31248 7.37549 1.31248C6.58157 1.31248 5.93799 1.95606 5.93799 2.74998L5.93799 21.393L3.5194 18.9627L3.51938 18.9627C2.95934 18.4 2.0492 18.3978 1.48649 18.9578C0.923597 19.518 0.921712 20.4282 1.48158 20.9908L1.83599 20.6381L1.48158 20.9908L6.35659 25.8894L6.36177 25.8946L6.36345 25.8962C6.92422 26.4522 7.82863 26.4503 8.38748 25.8962L8.38912 25.8947L8.3944 25.8894L13.2694 20.9907L13.2694 20.9907C13.8294 20.428 13.8273 19.5179 13.2645 18.9578C12.7018 18.3977 11.7917 18.3999 11.2316 18.9626L11.2316 18.9626L8.81299 21.393Z" fill="#61C277" stroke="#61C277"/>
+																	</svg>
+																</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">Bitcoin</span>
+															</td>
+															<td>
+																<span class="text-black">06:24:45 AM</span>
+															</td>
+															<td>
+																<span class="font-w600 text-black">+$5,553</span>
+															</td>
+															<td>
+																<a class="btn-link text-success float-end" href="javascript:void(0);">Completed</a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="http://dexignzone.com/" target="_blank">DexignZone</a> 2022</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+	</div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
+
+	
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+	
+	<!-- Dashboard 1 -->
+	<script src="js/dashboard/portofolio.js"></script>
+    <script src="js/custom.min.js"></script>
+	<script src="js/deznav-init.js"></script>
+	<script src="js/demo.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+</body>
+</html>

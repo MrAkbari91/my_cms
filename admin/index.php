@@ -1,59 +1,59 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>unit - Admin Login </title>
+    <!-- Favicon icon -->
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 </head>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-2"></div>
-            <div class="col-lg-6 col-md-8 login-box">
-                <div class="col-lg-12 login-key">
-                    <i class="fa fa-key" aria-hidden="true"></i>
-                </div>
-                <div class="col-lg-12 login-title">
-                    ADMIN Login
-                </div>
+<body class="vh-100">
+    <div class="authincation h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <h2 class="text-center mb-4">Sign in</h2>
+                                    <span id="statusmsglogin"></span>
+                                    <div>
+                                        <form method="post">
+                                            <div class="form-group">
+                                                <label class="mb-1"><strong>Email</strong></label>
+                                                <input type="email" class="form-control" name="adminemail" id="adminemail">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="mb-1"><strong>Password</strong></label>
+                                                <input type="password" class="form-control" name="adminpwd" id="adminpwd">
+                                            </div>
 
-                <div class="col-lg-12 login-form">
-                    <div class="col-lg-12 login-form">
-                        <form>
-                            <div class="form-group">
-                                <label class="form-control-label">USERNAME</label>
-                                <input type="email" class="form-control" name="adminemail">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-control-label">PASSWORD</label>
-                                <input type="password" class="form-control" name="adminpwd">
-                            </div>
-
-                            <div class="col-lg-12 loginbttm">
-                                <div class="col-lg-6 login-btm login-text">
-                                <span id="adminloginmsg"></span>
-                                </div>
-                                <div class="col-lg-6 login-btm login-button">
-                                    <button type="submit" class="btn btn-outline-primary">LOGIN</button>
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-primary btn-block" id="loginbtn" onclick="adminlogin()">Sign Me In</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-2"></div>
             </div>
         </div>
+    </div>
 
-        <script src="../js/ajaxrequest.js"></script>
-        <script src="../js/login.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+
+    <script src="../js/ajaxrequest.js"></script>
 </body>
 
 </html>
