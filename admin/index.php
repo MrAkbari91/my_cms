@@ -1,4 +1,11 @@
-
+<?php
+include "../dbcon.php";
+session_start();
+if(isset($_SESSION['adminlogin']) && $_SESSION['adminlogin']){
+    header("Location: dashboard.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +31,7 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <h2 class="text-center mb-4">Sign in</h2>
-                                    <span id="statusmsglogin"></span>
+                                    <p id="statusmsglogin"></p>
                                     <div>
                                         <form method="post">
                                             <div class="form-group">

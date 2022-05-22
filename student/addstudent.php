@@ -36,7 +36,7 @@ if (!isset($_SESSION)) {
         if(isset($_POST['checkloginemail']) && isset($_POST['lemail']) && isset ($_POST['lpwd'])){
             $lemail=$_POST['lemail'];
             $lpwd=$_POST['lpwd'];
-            $sql ="SELECT * FROM student WHERE email='".$lemail."' AND pwd='".$lpwd."'";
+            $sql ="SELECT * FROM student WHERE email='".$lemail."' AND pwd='".$lpwd."' and is_active=1";
             $result =$con->query($sql);
             $row=$result->num_rows;
             if($row===1){
