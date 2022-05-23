@@ -6,6 +6,9 @@ if (isset($_SESSION['adminlogin'])) {
 	header("location:index.php");
 }
 include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
+$sql = "SELECT * from adminlogin;";
+$result = mysqli_query($con, $sql);
+$row = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +32,6 @@ include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
 
 
 	<style>
-		
 		#main-wrapper>div.content-body>div>div>div>div>div.card-body>div>form>div.input-group.custom_file_input>div {
 			width: auto;
 			margin-left: 10px;
@@ -39,6 +41,23 @@ include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
 			width: 60px;
 			object-fit: cover;
 			height: 60px;
+		}
+
+		.cover {
+			object-fit: cover;
+		}
+
+		.profile_img {
+			width: 200px;
+			height: 200px;
+		}
+
+		.key {
+			width: 20px !important;
+		}
+
+		.search-area {
+			max-width: 350px;
 		}
 	</style>
 </head>
@@ -93,7 +112,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
 							</li> -->
 							<li class="nav-item dropdown header-profile">
 								<a class="nav-link" href="index.html#" role="button" data-bs-toggle="dropdown">
-									<img src="images/profile/pic1.jpg" width="20" alt="" />
+									<img src="<?= $row['img']; ?>" width="20" alt="" class="cover" />
 									<div class="header-info">
 										<span>Johndoe</span>
 										<small>Super Admin</small>
@@ -101,14 +120,18 @@ include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
 								</a>
 								<div class="dropdown-menu dropdown-menu-end">
 									<a href="profile.php" class="dropdown-item ai-icon">
-										<svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<svg id="icon-user1" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 											<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
 											<circle cx="12" cy="7" r="4"></circle>
 										</svg>
 										<span class="ms-2">Profile </span>
 									</a>
+									<a href="changepassword.php" class="dropdown-item ai-icon">
+										<img src="images/key.svg" alt="key" class="key">
+										<span class="ms-2">Profile </span>
+									</a>
 									<a href="logout.php" class="dropdown-item ai-icon">
-										<svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<svg id="icon-logout" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 											<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
 											<polyline points="16 17 21 12 16 7"></polyline>
 											<line x1="21" y1="12" x2="9" y2="12"></line>
@@ -177,3 +200,9 @@ include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
 			</div>
 		</div>
 		<!-- Sidebar end -->
+
+		<!-- contant add -->
+		<div class="content-body">
+			<div class="container-fluid">
+				<!-- row -->
+				<div class="row">

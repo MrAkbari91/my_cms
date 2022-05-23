@@ -1,27 +1,8 @@
-<?php include "include/header.php"; ?>
+<?php include "include/header.php";?>
 
 <!-- Content body start -->
 
-<div class="content-body">
-    <div class="container-fluid">
-        <!-- <div class="row page-titles mx-0">
-                    <div class="col-sm-6 p-md-0">
-                        <div class="welcome-text">
-                            <h4>Hi, welcome back!</h4>
-                            <span>Datatable</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Student</a></li>
-                        </ol>
-                    </div>
-                </div> -->
-        <!-- row -->
 
-        <!-- table start -->
-        <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
@@ -74,19 +55,19 @@
                                     while ($row = $result->fetch_assoc()) {
                                     ?>
                                         <tr>
-                                            <td><img class="rounded-circle" width="35" src="<?= $row['img']; ?>" alt=""></td>
-                                            <td><?= $row['course_name']; ?></td>
-                                            <td><?= $row['courses_desc']; ?></td>
-                                            <td><?= $row['author']; ?></td>
-                                            <td><?= $row['duration']; ?></td>
-                                            <td><?= $row['original_price']; ?></td>
-                                            <td><?= $row['price']; ?></td>
-                                            <td><?= $row['is_created']; ?></td>
-                                            <td><?= $row['is_update']; ?></td>
+                                            <td><img class="rounded-circle" width="60" src="<?= $row['img'];?>" alt=""></td>
+                                            <td><?= $row['course_name'];?></td>
+                                            <td><?= $row['courses_desc'];?></td>
+                                            <td><?= $row['author'];?></td>
+                                            <td><?= $row['duration'];?></td>
+                                            <td><?= $row['original_price'];?></td>
+                                            <td><?= $row['price'];?></td>
+                                            <td><?= $row['is_created'];?></td>
+                                            <td><?= $row['is_update'];?></td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a href="update_course.php?from=course&id=<?= $row['id']; ?>" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                    <a href="query.php?from=course&type=delete&id=<?= $row['id']; ?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    <a href="update_course.php?from=course&id=<?= $row['id'];?>" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                                    <a href="query.php?from=course&type=delete&id=<?= $row['id'];?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -105,4 +86,22 @@
 
 <!-- Content body end -->
 
-<?php include "include/footer.php"; ?>
+
+<script>
+    function toggle_active(id){
+        var id=id;
+        $.ajax({
+            url:"query.php?type=delete&from=course",
+            type:"post",
+            data:{course_id:id},
+            success:function(result){
+                if(result==1){
+                    alert("ok");
+                }else{
+                    alert("no");
+                }
+            }
+        });
+    }
+</script>
+<?php include "include/footer.php";?>
