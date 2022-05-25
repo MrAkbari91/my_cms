@@ -6,7 +6,7 @@ if (isset($_SESSION['adminlogin'])) {
 	header("location:index.php");
 }
 include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
-$sql = "SELECT * from adminlogin;";
+$sql = "SELECT * from adminlogin where email= '$adminemail' and is_active=1;";
 $result = mysqli_query($con, $sql);
 $row = $result->fetch_assoc();
 ?>
@@ -31,7 +31,11 @@ $row = $result->fetch_assoc();
 	<link href="../css/css/style.css" rel="stylesheet">
 	<link href="../css/style.css" rel="stylesheet">
 
-
+	<style>
+	.btn-buy-now{
+		display: none!important;
+	}
+</style>
 </head>
 
 <body>
@@ -100,7 +104,7 @@ $row = $result->fetch_assoc();
 									</a>
 									<a href="changepassword.php" class="dropdown-item ai-icon">
 										<img src="../images/key.svg" alt="key" class="key">
-										<span class="ms-2">Profile </span>
+										<span class="ms-2">Change password </span>
 									</a>
 									<a href="logout.php" class="dropdown-item ai-icon">
 										<svg id="icon-logout" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

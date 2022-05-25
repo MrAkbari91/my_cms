@@ -33,15 +33,16 @@ if (!isset($_SESSION)) {
     // login student
     
     if(!isset($_SESSION['studentlogin'])){
-        if(isset($_POST['checkloginemail']) && isset($_POST['lemail']) && isset ($_POST['lpwd'])){
-            $email=$_POST['lemail'];
-            $pwd=$_POST['lpwd'];
+        if(isset($_POST['checkloginemail']) && isset($_POST['email']) && isset ($_POST['pwd'])){
+            $email=$_POST['email'];
+            $pwd=$_POST['pwd'];
             $sql ="SELECT * FROM student WHERE email='".$email."' AND pwd='".$pwd."' and is_active=1";
             $result =$con->query($sql);
             $row=$result->num_rows;
+           
             if($row===1){
                 $_SESSION['studentlogin']=true;
-                $_SESSION['studentemail']=$email;
+                $_SESSION['email']=$email;
                 echo json_encode($row);
             } else if($row === 0){
                 echo json_encode($row);
@@ -55,7 +56,7 @@ if (!isset($_SESSION)) {
         if(isset($_POST['adlog']) && isset($_POST['adminemail']) && isset ($_POST['adminpwd'])){
             $adminemail=$_POST['adminemail'];
             $adminpwd=$_POST['adminpwd'];
-            $sql ="SELECT email,pwd FROM adminlogin WHERE email='".$adminemail."' AND pwd='".$adminpwd."'";
+            $sql ="SELECT email,pwd FROM adminlogin WHERE email='".$adminemail."' AND pwd='".$adminpwd."'AND is_active=1";
             $result =$con->query($sql);
             $row=$result->num_rows;
             if($row===1){

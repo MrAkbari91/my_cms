@@ -9,7 +9,7 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
-    <!-- bootstrap js -->
+    <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> -->
 
@@ -62,7 +62,7 @@
                 </li>';
                 } else {
                     echo '<li class="nav-item custom-nav-item" data-toggle="modal" data-target="#loginModal">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="login.php">Login</a>
                 </li>
                 <li class="nav-item custom-nav-item" data-toggle="modal" data-target="#registrationModal">
                     <a class="nav-link" href="#">Sign up</a>

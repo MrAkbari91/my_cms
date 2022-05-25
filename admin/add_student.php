@@ -16,8 +16,8 @@
                     <?php    }
                     ?>
                     <?php
-                    if (isset($_GET['status']) && $_GET['status'] == "AlreadyExists ") { ?>
-                        <p class="text-center alert alert-danger"> Student Already Exists</p>
+                    if (isset($_GET['status']) && $_GET['status'] == "alreadyexists") { ?>
+                        <p class="text-center alert alert-danger"> Email Already Exists</p>
                     <?php    }
                     ?>
                     <?php

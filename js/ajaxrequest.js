@@ -1,85 +1,85 @@
-$(document).ready(function(){
-    $("#remail").on("blur", function(){
-        var remail=$("#remail").val();
-        var reg=/^[A-Z0-9._%+-]+@([A-z0-9]+\.)+[A-Z]{2,4}$/i;
+$(document).ready(function () {
+    $("#remail").on("blur", function () {
+        var remail = $("#remail").val();
+        var reg = /^[A-Z0-9._%+-]+@([A-z0-9]+\.)+[A-Z]{2,4}$/i;
 
         $.ajax({
-            url:"student/addstudent.php",
-            method:"POST",
-            dataType:"json",
-            data:{
-                checkemail : "checkemail",
-                remail : remail,
+            url: "student/addstudent.php",
+            method: "POST",
+            dataType: "json",
+            data: {
+                checkemail: "checkemail",
+                remail: remail,
             },
-            success:function(data){
+            success: function (data) {
                 // console.log(data);
-               
-                if(data!=0){
+
+                if (data != 0) {
                     $("#msg2").html('<small style="color:red;">email pelethi 6</small>');
-                    $("#regbtn").attr("disabled",true);
-                }else if(data==0 && reg.test(remail)){
+                    $("#regbtn").attr("disabled", true);
+                } else if (data == 0 && reg.test(remail)) {
                     $("#msg2").html('<small style="color:green;">have barobar</small>');
-                    $("#regbtn").attr("disabled",false);
-                }else if(!reg.test(remail)){
+                    $("#regbtn").attr("disabled", false);
+                } else if (!reg.test(remail)) {
                     $("#msg2").html('<small style="color:red;">sarkho mail nakho</small>');
-                    $("#regbregbtntn").attr("disabled",false);
+                    $("#regbregbtntn").attr("disabled", false);
                 }
-                
+
             },
         });
     });
 })
 
 
-function addstudent(){
-    var reg=/^[A-Z0-9._%+-]+@([A-z0-9]+\.)+[A-Z]{2,4}$/i;
-    var rname =$("#rname").val();
-    var remail =$("#remail").val();
-    var rpwd =$("#rpwd").val();
+function addstudent() {
+    var reg = /^[A-Z0-9._%+-]+@([A-z0-9]+\.)+[A-Z]{2,4}$/i;
+    var rname = $("#rname").val();
+    var remail = $("#remail").val();
+    var rpwd = $("#rpwd").val();
 
     // checking form filed on submission
 
-    if(rname.trim()==""){
+    if (rname.trim() == "") {
         $("#msg1").html('<small style="color:red;">Plese enter name</small>');
         $("#rname").focus();
         return false;
-    }else if(remail.trim()==""){
+    } else if (remail.trim() == "") {
         $("#msg2").html('<small style="color:red;">Plese enter email</small>');
         $("#remail").focus();
         return false;
-    }else if(remail.trim() !=""&&!reg.test(remail)){
+    } else if (remail.trim() != "" && !reg.test(remail)) {
         $("#msg2").html('<small style="color:red;">plese Enter valid email e.g.exampale@gmail.com</small>')
-    }else if(rpwd.trim()==""){
+    } else if (rpwd.trim() == "") {
         $("#msg3").html('<small style="color:red;">Plese enter password</small>');
         $("#rpwd").focus();
         return false;
-    }else{
+    } else {
         $.ajax({
-            url:'student/addstudent.php',
-            method:'POST',
-            dataType:"json",
-            data:{
-                checkregbtn:"checkregbtn",
-                rname:rname,
-                remail:remail,
-                rpwd:rpwd,
+            url: 'student/addstudent.php',
+            method: 'POST',
+            dataType: "json",
+            data: {
+                checkregbtn: "checkregbtn",
+                rname: rname,
+                remail: remail,
+                rpwd: rpwd,
             },
-            success:function(data){
+            success: function (data) {
 
-                if(data=="OK"){
+                if (data == "OK") {
                     $('#statusmsgreg').html('<span class="alert alert-success">Registration Successfull</span>');
                     clearfield();
-                    }else if(data=="Failed"){
+                } else if (data == "Failed") {
                     $('#statusmsgreg').html('<span class="alert alert-danger">Unable to Register</span>');
                 }
             },
         });
-    } 
+    }
 }
 
 // fild reset
 
-function clearfield(){
+function clearfield() {
     $("#registration").trigger("reset");
     $("#msg1").html(" ");
     $("#msg2").html(" ");
@@ -89,25 +89,25 @@ function clearfield(){
 
 
 // login student
-function login(){
-    var email=$("#lemail").val();
-    var pwd=$("#lpwd").val();
+function studentlogin() {
+    var email = $("#email").val();
+    var pwd = $("#password").val();
     $.ajax({
-        url:"student/addstudent.php",
-        method:"POST",
-        data:{
-            checkloginemail:"checkloginemail",
-            email : email,
-            pwd : pwd,
+        url: "student/addstudent.php",
+        method: "POST",
+        data: {
+            checkloginemail: "checkloginemail",
+            email: email,
+            pwd: pwd,
         },
-        success: function(data){
-            if(data==0){
-                $("#statusmsglogin").html("<span class='alert alert-danger'>invalid email id or password</span>");
-            }else if(data==1){
-                $("#statusmsglogin").html('<div class="spinner-border text-success" role="status"></div>');
-                setTimeout(()=>{
-                    window.location.href="index.php";
-                },1000);
+        success: function (data) {
+            if (data == 0) {
+                $("#statusmsglogin").html("<div class='alert alert-danger text-center'>invalid email id or password</div>");
+            } else if (data == 1) {
+                $("#login").html('<div class="spinner-border text-success text-center" role="status"></div>');
+                setTimeout(() => {
+                    window.location.href = "index.php";
+                }, 1000);
             }
         },
     });
@@ -117,23 +117,23 @@ function login(){
 
 
 // login admin
-function adminlogin(){
-    var adminemail=$("#adminemail").val();
-    var adminpwd=$("#adminpwd").val();
+function adminlogin() {
+    var adminemail = $("#email").val();
+    var adminpwd = $("#password").val();
     console.log(adminemail);
     $.ajax({
-        url:"../admin/logindata.php",
-        method:"POST",
-        data:{
-            checkloginemail:"checkloginemail",
-            adminemail : adminemail,
-            adminpwd : adminpwd,
+        url: "../admin/logindata.php",
+        method: "POST",
+        data: {
+            checkloginemail: "checkloginemail",
+            adminemail: adminemail,
+            adminpwd: adminpwd,
         },
-        success: function(data){
-            if(data==0){
-                $("#statusmsglogin").html("<span class='alert alert-danger'>invalid email id or password</span>");
-            }else if(data==1){
-                window.location.href="dashboard.php";
+        success: function (data) {
+            if (data == 0) {
+                $("#statusmsglogin").html("<div class='alert alert-danger text-center'>invalid email id or password</div>");
+            } else if (data == 1) {
+                window.location.href = "dashboard.php";
             }
         },
     });

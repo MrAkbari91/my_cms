@@ -2,7 +2,6 @@
 
 $_SESSION['adminemail'] = $adminemail;
 
-
 ?>
 
 
@@ -20,11 +19,6 @@ $_SESSION['adminemail'] = $adminemail;
                     <?php    }
                     ?>
                     <?php
-                    if (isset($_GET['update_status']) && $_GET['update_status'] == "alreadyexists") { ?>
-                        <p class="text-center alert alert-danger"> Email Already Exists</p>
-                    <?php    }
-                    ?>
-                    <?php
                     if (isset($_GET['update_status']) && $_GET['update_status'] == "success") { ?>
                         <p class="text-center solid alert h3 alert-success"> Student Update successfully</p>
                     <?php    }
@@ -37,13 +31,13 @@ $_SESSION['adminemail'] = $adminemail;
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">id</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="id" value="<?= $row['id']; ?>">
+                            <input type="text" class="form-control" name="sid" value="<?= $row['sid']; ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="name" value="<?= $row['name']; ?>">
+                            <input type="text" class="form-control" name="name" value="<?= $row['sname']; ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -65,35 +59,23 @@ $_SESSION['adminemail'] = $adminemail;
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">facebook</label>
+                        <label class="col-sm-3 col-form-label">Occupation</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" value="<?= $row['facebook']; ?>" name="facebook">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Instagram</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" value="<?= $row['instagram']; ?>" name="instagram">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Skype</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" value="<?= $row['skype']; ?>" name="skype">
+                            <input type="text" class="form-control" value="<?= $row['occ']; ?>" name="occupation">
                         </div>
                     </div>
                     <div class="input-group custom_file_input">
                         <label class="col-sm-3 col-form-label">Image</label>
                         <div class="input-group custom_file_input">
                             <div class="form-file">
-                                <input type="file" class="form-file-input form-control" name="admin_img" id="admin_img">
+                                <input type="file" class="form-file-input form-control" name="student_img" id="student_img">
                             </div>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <span class="col-sm-3"></span>
                         <div class="col-sm-6">
-                            <input type="submit" class="btn btn-success my-5" id="update_admin" name="update_admin" value="update">
+                            <input type="submit" class="btn btn-success my-5" id="update_profile" name="update_profile" value="update">
                             <a href="profile.php" class="btn btn-danger my-5">Close</a>
                         </div>
                     </div>

@@ -12,11 +12,7 @@ include('registration.php')
 <!-- end registration form -->
 
 
-<!-- start login form -->
-<?php
-include('loginform.php')
-?>
-<!-- end login form -->
+
 
 
 

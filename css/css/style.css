@@ -35425,7 +35425,7 @@ $color_pallate_15: #ed0b4c; */
   background: #05031A;
   border-color: #2a2833; }
 
-[data-theme-version="dark"] 13 .ck-editor__editable {
+[data-theme-version="dark"] .ck-editor__editable {
   background: #05031A !important; }
 
 [data-theme-version="dark"] .header-right .header-profile > a.nav-link {
@@ -46892,7 +46892,7 @@ $color_pallate_15: #ed0b4c; */
   background: #05031A;
   border-color: #2a2833; }
 
-[data-theme-version="dark"] 13 .ck-editor__editable {
+[data-theme-version="dark"] .ck-editor__editable {
   background: #05031A !important; }
 
 [data-theme-version="dark"] .header-right .header-profile > a.nav-link {
@@ -47043,3 +47043,33 @@ $color_pallate_15: #ed0b4c; */
     [data-theme-version="dark"] .footer .copyright a {
       color: #fff; }
 
+      #main-wrapper>div.content-body>div>div>div>div>div.card-body>div>form>div.input-group.custom_file_input>div {
+        width: auto;
+        margin-left: 10px;
+      }
+      
+      .d_img {
+        width: 60px;
+        object-fit: cover;
+        height: 60px;
+      }
+      
+      .cover {
+        object-fit: cover;
+      }
+      
+      .profile_img {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .key {
+        width: 20px !important;
+      }
+      
+      .search-area {
+        max-width: 350px;
+      }
+      #main-wrapper  div.content-body  form > div:nth-child(3) > div > input{
+        padding: 12px;
+      }

@@ -39,6 +39,8 @@
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Phone</th>
+                            <th>DOB</th>
                             <th>password</th>
                             <th>Occupation</th>
                             <th>Action</th>
@@ -56,6 +58,8 @@
                                 </th>
                                 <th><?= $row['sname']; ?></th>
                                 <th><?= $row['email']; ?></th>
+                                <th><?= $row['phone']; ?></th>
+                                <th><?= $row['dob']; ?></th>
                                 <th><?= $row['pwd']; ?></th>
                                 <th><?= $row['occ']; ?></th>
                                 <td>

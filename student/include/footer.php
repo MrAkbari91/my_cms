@@ -39,6 +39,9 @@
 <!-- Form validate init -->
 <script src="../js/plugins-init/jquery.validate-init.js"></script>
 
+<!-- styleSwitcher -->
+<script src="../js/styleSwitcher.js"></script>
+
 <script>
   document.getElementById("year").innerHTML = new Date().getFullYear();
 

@@ -1,6 +1,6 @@
 <?php include "include/header.php";
 
-if ($_GET['from'] == "student") {
+if ($_GET['sid']){
     $sid = $_GET['sid'];
     $sql = "SELECT * FROM student WHERE sid=$sid";
     $result = $con->query($sql);
@@ -23,6 +23,11 @@ if ($_GET['from'] == "student") {
                         <p class="text-center alert-alt solid h3 alert alert-danger"> Fill All Fild</p>
                     <?php    }
                     ?>
+                     <?php
+                    if (isset($_GET['update_status']) && $_GET['update_status'] == "alreadyexists") { ?>
+                        <p class="text-center alert alert-danger"> Email Already Exists</p>
+                    <?php    }
+                    ?>
                     <?php
                     if (isset($_GET['update_status']) && $_GET['update_status'] == "success") { ?>
                         <p class="text-center solid alert h3 alert-success"> Student Update successfully</p>
@@ -36,50 +41,48 @@ if ($_GET['from'] == "student") {
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Sid</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="sid" value="<?php if (isset($row['sid'])) {
-                                                                                            echo $row['sid'];
-                                                                                        } ?>" readonly>
+                            <input type="text" class="form-control" name="sid" value="<?php if (isset($row['sid'])) { echo $row['sid']; } ?>" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" value="<?php if (isset($row['sid'])) {
-                                                                                echo $row['sname'];
-                                                                            } ?>" name="update_student_name">
+                            <input type="text" class="form-control" value="<?php if (isset($row['sid'])) {echo $row['sname'];} ?>" name="name">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" value="<?php if (isset($row['sid'])) {
-                                                                                echo $row['email'];
-                                                                            } ?>" name="update_student_email">
+                            <input type="email" class="form-control" value="<?php if (isset($row['sid'])) {echo $row['email'];} ?>" name="email">
                         </div>
                     </div>
                     <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Phone</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" value="<?php if (isset($row['phone'])) {echo $row['phone'];} ?>" name="phone">
+                        </div>
+                    </div><div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Date of Birth</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" value="<?php if (isset($row['dob'])) {echo $row['dob'];} ?>" name="dob">
+                        </div>
+                    </div><div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Occupation</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" value="<?php if (isset($row['sid'])) {
-                                                                                echo $row['occ'];
-                                                                            } ?>" name="update_occupation">
+                            <input type="text" class="form-control" value="<?php if (isset($row['sid'])) {echo $row['occ'];} ?>" name="occupation">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Password</label>
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" value="<?php if (isset($row['sid'])) {
-                                                                                    echo $row['pwd'];
-                                                                                } ?>" name="password">
+                            <input type="password" class="form-control" value="<?php if (isset($row['sid'])) {echo $row['pwd'];} ?>" name="password">
                         </div>
                     </div>
                     <div class="input-group custom_file_input">
                         <label class="col-sm-3 col-form-label">Course Banner image</label>
                         <div class="input-group custom_file_input">
                             <div class="form-file">
-                                <input type="file" class="form-file-input form-control" name="update_student_img" id="update_student_img" value="<?php if (isset($row['sid'])) {
-                                                                                                                                                        echo $row['img'];
-                                                                                                                                                    } ?>">
+                                <input type="file" class="form-file-input form-control" name="img" id="img" value="<?php if (isset($row['sid'])) { echo $row['img'];} ?>">
                             </div>
                         </div>
                     </div>

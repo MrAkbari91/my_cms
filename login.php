@@ -1,10 +1,41 @@
-<?php
-include "../dbcon.php";
+<!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="loginModalLabel">Login</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form id="login">
+					<div class="form-group">
+						<i class="fas fa-envelope"></i><label for="lemail" class="pl-2 font-weight-bold">Email</label>
+						<input type="email" class="form-control" name="lemail" id="lemail" placeholder="Email">
+
+					</div>
+					<div class="form-group">
+						<i class="fas fa-key"></i><label for="lpwd" class="pl-2 font-weight-bold">Password</label>
+						<input type="password" class="form-control" name="lpwd" id="lpwd" placeholder="Password">
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<span id="statusmsglogin"></span>
+				<button type="button" class="btn btn-primary" id="loginbtn" onclick="login()">Login</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<?php 
 session_start();
-if(isset($_SESSION['adminlogin']) && $_SESSION['adminlogin']){
-    header("Location: dashboard.php");
+if(isset($_SESSION['studentlogin']) && $_SESSION['studentlogin']){
+    header("Location: student/dashboard.php");
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +47,9 @@ if(isset($_SESSION['adminlogin']) && $_SESSION['adminlogin']){
 	<title>Student Login</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-	<link rel="stylesheet" href="../css/login.css">
+	<link rel="stylesheet" href="css/login.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 
 </head>
@@ -118,7 +149,7 @@ if(isset($_SESSION['adminlogin']) && $_SESSION['adminlogin']){
 
 		<div class="inputGroup inputGroup1">
 			<label for="email1">Email</label>
-			<input type="text" id="email" autocomplete="off" name="adminemail" />
+			<input type="text" id="email" autocomplete="off" name="lemail" />
 
 			<span class="indicator"></span>
 		</div>
@@ -128,15 +159,19 @@ if(isset($_SESSION['adminlogin']) && $_SESSION['adminlogin']){
 		</div>
 		<div class="inputGroup inputGroup3">
 			<div id="statusmsglogin"></div>
-			<button type="button" class="btn btn-primary" id="login" onclick="adminlogin()">Login</button>
+			<button type="button" class="btn btn-primary" id="login" onclick="studentlogin()">Login</button>
+		</div>
+
+		<div class="new-account mt-3">
+			<p>Don't have an account? <a class="text-primary" href="registration.php">Sign Up</a></p>
 		</div>
 	</form>
 
-	<script src="../js/login.js"></script>
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-	<script src="../js/ajaxrequest.js"></script>
+	<script src="js/ajaxrequest.js"></script>
 </body>
 
 </html>

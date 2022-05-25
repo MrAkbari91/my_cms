@@ -122,33 +122,3 @@ input[type=text], select, textarea {
 		border-radius: none;
 	}
 }
-
-
-/* admin template */
-#main-wrapper>div.content-body>div>div>div>div>div.card-body>div>form>div.input-group.custom_file_input>div {
-	width: auto;
-	margin-left: 10px;
-}
-
-.d_img {
-	width: 60px;
-	object-fit: cover;
-	height: 60px;
-}
-
-.cover {
-	object-fit: cover;
-}
-
-.profile_img {
-	width: 200px;
-	height: 200px;
-}
-
-.key {
-	width: 20px !important;
-}
-
-.search-area {
-	max-width: 350px;
-}
