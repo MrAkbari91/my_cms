@@ -17,7 +17,7 @@ $row = $result->fetch_assoc();
             <div class="basic-form">
                 <form action="query.php" method="post">
                     <?php
-                    if (isset($_GET['update_status']) && $_GET['update_status'] == "fillfild") { ?>
+                    if (isset($_GET['status']) && $_GET['status'] == "fillfild") { ?>
                         <p class="text-center alert-alt solid h3 alert alert-danger"> Fill All Fild</p>
                     <?php    }
                     ?>

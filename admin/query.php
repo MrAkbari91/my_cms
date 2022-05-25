@@ -20,7 +20,7 @@ if (isset($_POST['add_course'])) {
 
         $course_img = $_FILES['course_img']['name'];
         $course_img_temp = $_FILES['course_img']['tmp_name'];
-        $course_img_folder = 'images/course_img/' . $course_img;
+        $course_img_folder = '../images/course_img/' . $course_img;
 
         $sql = "INSERT INTO courses ( course_name , courses_desc, author , img , duration , price , original_price) VALUES ('$course_name','$course_desc','$course_author','$course_img_folder','$duration','$selling_price','$original_price')";
 
@@ -47,7 +47,7 @@ if (isset($_POST['add_student'])) {
 
         $student_img = $_FILES['student_img']['name'];
         $student_img_temp = $_FILES['student_img']['tmp_name'];
-        $student_img_folder = 'images/student_img/' . $student_img;
+        $student_img_folder = '../images/student_img/' . $student_img;
 
         $query = "SELECT email FROM student WHERE email='" . $student_email . "'";
         $queryresult = $con->query($query);
@@ -81,7 +81,7 @@ if (isset($_POST['add_lesson'])) {
 
         $lesson_link = $_FILES['lesson_link']['name'];
         $lesson_link_temp = $_FILES['lesson_link']['tmp_name'];
-        $lesson_link_folder = 'images/lesson_videos/' . $lesson_link;
+        $lesson_link_folder = '../images/lesson_videos/' . $lesson_link;
 
        
             $sql = "INSERT INTO lesson (lesson_name, lesson_description, lesson_link, course_id, course_name) VALUES ('$lesson_name','$lesson_desc','$lesson_link_folder',$course_id , '$course_name')";
@@ -118,7 +118,7 @@ if (isset($_POST['update_admin'])) {
 
         $admin_img = $_FILES['admin_img']['name'];
         $admin_img_temp = $_FILES['admin_img']['tmp_name'];
-        $admin_img_folder = 'images/student_img/' . $admin_img;
+        $admin_img_folder = '../images/student_img/' . $admin_img;
 
         if ($admin_img == "") {
             $sql = "SELECT * from adminlogin where id =$id";
@@ -169,7 +169,7 @@ if (isset($_POST['update_course'])) {
     
         $update_course_img = $_FILES['update_course_img']['name'];
         $update_course_img_temp = $_FILES['update_course_img']['tmp_name'];
-        $update_course_img_folder = 'images/course_img/' . $update_course_img;
+        $update_course_img_folder = '../images/course_img/' . $update_course_img;
       
 
         if ($update_course_img == "") {
@@ -209,17 +209,17 @@ if (isset($_POST['update_course'])) {
 if (isset($_POST['update_student'])) {
     $sid = $_POST['sid'];
     // CHecking for Empty Fields
-    if (($_POST['update_student_name'] == "") || ($_POST['update_student_email'] == "") || ($_POST['update_occupation'] == "") || ($_POST['update_password'] == "")) {
+    if (($_POST['update_student_name'] == "") || ($_POST['update_student_email'] == "") || ($_POST['update_occupation'] == "") || ($_POST['password'] == "")) {
         header("Location: update_student.php?status=fillfild");
     } else {
         $update_student_name = $_POST['update_student_name'];
         $update_student_email = $_POST['update_student_email'];
         $update_occupation = $_POST['update_occupation'];
-        $update_password = $_POST['update_password'];
+        $update_password = $_POST['password'];
 
         $update_student_img = $_FILES['update_student_img']['name'];
         $update_student_img_temp = $_FILES['update_student_img']['tmp_name'];
-        $student_img_folder = 'images/student_img/' . $update_student_img;
+        $student_img_folder = '../images/student_img/' . $update_student_img;
 
 
         // var_dump($update_student_img);
@@ -301,7 +301,7 @@ if (isset($_POST['update_lesson'])) {
 
         $lesson_link = $_FILES['lesson_link']['name'];
         $lesson_link_temp = $_FILES['lesson_link']['tmp_name'];
-        $lesson_link_folder = 'images/lesson_videos/' . $lesson_link;
+        $lesson_link_folder = '../images/lesson_videos/' . $lesson_link;
       
 
         if ($lesson_link == "") {

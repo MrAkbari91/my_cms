@@ -53,9 +53,9 @@
 
                 <?php
                 session_start();
-                if(isset($_SESSION['is_login'])){
+                if(isset($_SESSION['studentlogin'])){
                     echo '<li class="nav-item custom-nav-item">
-                    <a class="nav-link" href="#">My Profile</a>
+                    <a class="nav-link" href="student/dashboard.php">My Profile</a>
                 </li>
                 <li class="nav-item custom-nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>

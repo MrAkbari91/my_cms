@@ -70,7 +70,7 @@ if ($_GET['from'] == "student") {
                         <div class="col-sm-9">
                             <input type="password" class="form-control" value="<?php if (isset($row['sid'])) {
                                                                                     echo $row['pwd'];
-                                                                                } ?>" name="update_password">
+                                                                                } ?>" name="password">
                         </div>
                     </div>
                     <div class="input-group custom_file_input">

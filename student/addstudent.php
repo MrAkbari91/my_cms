@@ -32,16 +32,16 @@ if (!isset($_SESSION)) {
 
     // login student
     
-    if(!isset($_SESSION['is_login'])){
+    if(!isset($_SESSION['studentlogin'])){
         if(isset($_POST['checkloginemail']) && isset($_POST['lemail']) && isset ($_POST['lpwd'])){
-            $lemail=$_POST['lemail'];
-            $lpwd=$_POST['lpwd'];
-            $sql ="SELECT * FROM student WHERE email='".$lemail."' AND pwd='".$lpwd."' and is_active=1";
+            $email=$_POST['lemail'];
+            $pwd=$_POST['lpwd'];
+            $sql ="SELECT * FROM student WHERE email='".$email."' AND pwd='".$pwd."' and is_active=1";
             $result =$con->query($sql);
             $row=$result->num_rows;
             if($row===1){
-                $_SESSION['is_login']=true;
-                $_SESSION['lemail']=$lemail;
+                $_SESSION['studentlogin']=true;
+                $_SESSION['studentemail']=$email;
                 echo json_encode($row);
             } else if($row === 0){
                 echo json_encode($row);

@@ -64,7 +64,7 @@ $row = $result->fetch_assoc();
                     </div>                    
                     <div class="input-group custom_file_input">
                         <label class="col-sm-3 col-form-label">lesson </label>
-                        <div class="input-group custom_file_input">
+                        <div class="input-group custom_file_input"> 
                             <div class="form-file">
                                 <input type="file" class="form-file-input form-control" name="lesson_link" id="lesson_link">
                             </div>

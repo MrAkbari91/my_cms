@@ -14,23 +14,23 @@
         <div class="card-body">
             <div class="table-responsive">
                 <?php
-                if (isset($_GET['status']) && $_GET['update_status'] == "success") { ?>
-                    <p class="alert alert-success solid alert-dismissible fade show"> Student update successfully</p>
+                if (isset($_GET['update_status']) && $_GET['update_status'] == "success") { ?>
+                    <p class="text-center alert alert-success solid alert-dismissible fade show"> Student update successfully</p>
                 <?php    }
                 ?>
                 <?php
-                if (isset($_GET['status']) && $_GET['update_status'] == "failed") { ?>
-                    <p class="alert alert-danger solid alert-dismissible fade show"> Student update Failed!</p>
+                if (isset($_GET['update_status']) && $_GET['update_status'] == "failed") { ?>
+                    <p class="text-center alert alert-danger solid alert-dismissible fade show"> Student update Failed!</p>
                 <?php    }
                 ?>
                 <?php
-                if (isset($_GET['status']) && $_GET['delete_status'] == "success") { ?>
-                    <p class="alert alert-success solid alert-dismissible fade show"> Student deleted successfully</p>
+                if (isset($_GET['delete_status']) && $_GET['delete_status'] == "success") { ?>
+                    <p class="text-center alert alert-success solid alert-dismissible fade show"> Student deleted successfully</p>
                 <?php    }
                 ?>
                 <?php
-                if (isset($_GET['status']) && $_GET['delete_status'] == "failed") { ?>
-                    <p class="alert alert-danger solid alert-dismissible fade show"> Student Delete Failed!</p>
+                if (isset($_GET['delete_status']) && $_GET['delete_status'] == "failed") { ?>
+                    <p class="text-center alert alert-danger solid alert-dismissible fade show"> Student Delete Failed!</p>
                 <?php    }
                 ?>
                 <table id="example3" class="display" style="min-width: 845px">

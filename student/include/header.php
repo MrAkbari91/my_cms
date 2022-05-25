@@ -1,12 +1,12 @@
 <?php
 session_start();
-if (isset($_SESSION['adminlogin'])) {
-	$adminemail = $_SESSION['adminemail'];
+if (isset($_SESSION['studentlogin'])) {
+	$sid = $_SESSION['sid'];
 } else {
 	header("location:index.php");
 }
 include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
-$sql = "SELECT * from adminlogin;";
+$sql = "SELECT * from student;";
 $result = mysqli_query($con, $sql);
 $row = $result->fetch_assoc();
 ?>
@@ -18,7 +18,7 @@ $row = $result->fetch_assoc();
 	<meta charset="utf-8">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>unit - Admin Dashboard </title>
+	<title>unit - Student Dashboard </title>
 	<!-- Favicon icon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
 
@@ -30,7 +30,6 @@ $row = $result->fetch_assoc();
 	<link href="../css/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
 	<link href="../css/css/style.css" rel="stylesheet">
 	<link href="../css/style.css" rel="stylesheet">
-
 
 </head>
 
@@ -84,25 +83,29 @@ $row = $result->fetch_assoc();
 							</li> -->
 							<li class="nav-item dropdown header-profile">
 								<a class="nav-link" href="index.html#" role="button" data-bs-toggle="dropdown">
-									<img src="<?= $row['img']; ?>" width="20" alt="" class="cover" />
+									<img src="<?=$row['img']; ?>" width="20" alt="" class="cover" />
 									<div class="header-info">
-										<span><?= $row['name']; ?></span>
-										<small>Super Admin</small>
+										<span><?=$row['sname'];?></span>
+										<small>Student</small>
 									</div>
 								</a>
 								<div class="dropdown-menu dropdown-menu-end">
 									<a href="profile.php" class="dropdown-item ai-icon">
-										<svg id="icon-user1" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<!-- <svg id="icon-user1" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 											<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
 											<circle cx="12" cy="7" r="4"></circle>
-										</svg>
+										</svg> -->
+										<i class="flaticon-381-user"></i>
+
 										<span class="ms-2">Profile </span>
 									</a>
 									<a href="changepassword.php" class="dropdown-item ai-icon">
-										<img src="../images/key.svg" alt="key" class="key">
+										<!-- <img src="../images/key.svg" alt="key" class="key"> -->
+										<i class="flaticon-381-key"></i>
+
 										<span class="ms-2">Profile </span>
 									</a>
-									<a href="logout.php" class="dropdown-item ai-icon">
+									<a href="../logout.php" class="dropdown-item ai-icon">
 										<svg id="icon-logout" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 											<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
 											<polyline points="16 17 21 12 16 7"></polyline>
@@ -128,37 +131,19 @@ $row = $result->fetch_assoc();
 							<span class="nav-text">Dashboard</span>
 						</a>
 					</li>
-					<li><a class="has-arrow ai-icon" aria-expanded="false">
-							<i class="flaticon-381-book"></i>
-							<span class="nav-text">Manage Courses</span>
-						</a>
-						<ul>
-							<li><a href="add_course.php">Add Course</a></li>
-							<li><a href="course.php">Courses</a></li>
-						</ul>
-					</li>
 					<li><a href="lessons.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-notebook-1"></i>
 							<span class="nav-text">Lessons</span>
 						</a>
 					</li>
-					<li><a class="has-arrow ai-icon" aria-expanded="false">
-							<i class="flaticon-381-user"></i>
-							<span class="nav-text">Manage Student</span>
-						</a>
-						<ul>
-							<li><a href="add_student.php">Add Student</a></li>
-							<li><a href="student.php">Student</a></li>
-						</ul>
-					</li>
-					<li><a href="sellrepoart.php" class="ai-icon" aria-expanded="false">
+					<li><a href="feedback.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-list-1"></i>
-							<span class="nav-text">Sell Repoart</span>
+							<span class="nav-text">feedback</span>
 						</a>
 					</li>
-					<li><a href="payment_status.php" class="ai-icon" aria-expanded="false">
-							<i class="flaticon-381-success-2"></i>
-							<span class="nav-text">Payment Status</span>
+					<li><a href="changepassword.php" class="ai-icon" aria-expanded="false">
+							<i class="flaticon-381-key"></i>
+							<span class="nav-text">Change Password</span>
 						</a>
 					</li>
 				</ul>
@@ -166,7 +151,7 @@ $row = $result->fetch_assoc();
 					<img src="../images/book.png" alt="book">
 				</div>
 				<div class="copyright">
-					<p><strong>CMS Admin Dashboard</strong> © <span id="year"></span> All Rights Reserved</p>
+					<p><strong>CMS Student Dashboard</strong> © <span id="year"></span> All Rights Reserved</p>
 					<p class="fs-12">Made with <span class="heart"></span> by Mr Akbari</p>
 				</div>
 			</div>

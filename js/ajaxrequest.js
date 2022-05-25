@@ -90,15 +90,15 @@ function clearfield(){
 
 // login student
 function login(){
-    var lemail=$("#lemail").val();
-    var lpwd=$("#lpwd").val();
+    var email=$("#lemail").val();
+    var pwd=$("#lpwd").val();
     $.ajax({
         url:"student/addstudent.php",
         method:"POST",
         data:{
             checkloginemail:"checkloginemail",
-            lemail : lemail,
-            lpwd : lpwd,
+            email : email,
+            pwd : pwd,
         },
         success: function(data){
             if(data==0){
