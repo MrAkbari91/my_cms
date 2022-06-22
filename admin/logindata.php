@@ -10,15 +10,16 @@ if (!isset($_SESSION)) {
             $adminemail=$_POST['adminemail'];
             $adminpwd=$_POST['adminpwd'];
 
-            $sql ="SELECT * FROM adminlogin WHERE email='".$adminemail."' AND pwd='".$adminpwd."'";
+            $sql ="SELECT * FROM adminlogin WHERE email='".$adminemail."' AND pwd='".$adminpwd."' and is_active=1";
             $result =$con->query($sql);
-            $row=$result->num_rows;
-            if($row===1){
+            $nrow=$result->num_rows;
+            if($nrow===1){
+                $row=$result->fetch_assoc();
                 $_SESSION['adminlogin']=true;
-                $_SESSION['adminemail']=$adminemail;
-                echo json_encode($row);
-            } else if($row === 0){
-                echo json_encode($row);
+                $_SESSION['data']=$row;
+                echo json_encode($nrow);
+            } else if($nrow === 0){
+                echo json_encode($nrow);
             }
         }
     }

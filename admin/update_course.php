@@ -35,43 +35,43 @@ $row = $result->fetch_assoc();
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Id</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="id" id="id" value="<?= $row['id'];?>" readonly>
+                            <input type="text" class="form-control" name="id" id="id" value="<?= $row['id']; ?>" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="update_course_name" id="update_course_name" value="<?= $row['course_name'];?>">
+                            <input type="text" class="form-control" name="update_course_name" id="update_course_name" value="<?= $row['course_name']; ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Description</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="update_course_desc" id="update_course_desc" value="<?= $row['courses_desc'];?>">
+                            <input type="text" class="form-control" name="update_course_desc" id="update_course_desc" value="<?= $row['courses_desc']; ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Author</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="update_course_aut" id="update_course_aut" value="<?= $row['author'];?>">
+                            <input type="text" class="form-control" name="update_course_aut" id="update_course_aut" value="<?= $row['author']; ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Duration</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="update_duration" id="update_duration" value="<?= $row['duration'];?>">
+                            <input type="text" class="form-control" name="update_duration" id="update_duration" value="<?= $row['duration']; ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Original Price</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="update_original_price" id="update_original_price" value="<?= $row['original_price'];?>">
+                            <input type="text" class="form-control" name="update_original_price" id="update_original_price" value="<?= $row['original_price']; ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Selling Price</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="update_selling_price" id="update_selling_price" value="<?= $row['price'];?>">
+                            <input type="text" class="form-control" name="update_selling_price" id="update_selling_price" value="<?= $row['price']; ?>">
                         </div>
                     </div>
                     <div class="input-group custom_file_input">
@@ -97,4 +97,4 @@ $row = $result->fetch_assoc();
 
 <!-- Content body end -->
 
-<?php include "include/footer.php";?>
+<?php include "include/footer.php"; ?>

@@ -61,15 +61,11 @@ if ($_GET['sid']){
                         <div class="col-sm-9">
                             <input type="text" class="form-control" value="<?php if (isset($row['phone'])) {echo $row['phone'];} ?>" name="phone">
                         </div>
-                    </div><div class="mb-3 row">
+                    </div>
+                    <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Date of Birth</label>
                         <div class="col-sm-9">
                             <input type="date" class="form-control" value="<?php if (isset($row['dob'])) {echo $row['dob'];} ?>" name="dob">
-                        </div>
-                    </div><div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Occupation</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" value="<?php if (isset($row['sid'])) {echo $row['occ'];} ?>" name="occupation">
                         </div>
                     </div>
                     <div class="mb-3 row">

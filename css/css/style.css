@@ -43313,7 +43313,7 @@ span#counter {
       margin-bottom: 20px;
       margin-top: 80px; } }
   .book-box:before {
-    background-image: url("../images/dots.png");
+    background-image: url("../../images/dots.png");
     background-repeat: no-repeat;
     content: "";
     height: 30px;
@@ -43324,7 +43324,7 @@ span#counter {
     top: 25px; }
   .book-box:after {
     content: "";
-    background-image: url("../images/dots-2.png");
+    background-image: url("../../images/dots-2.png");
     background-repeat: no-repeat;
     left: 0;
     bottom: 0;

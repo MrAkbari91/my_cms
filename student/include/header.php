@@ -2,11 +2,13 @@
 session_start();
 
 if (isset($_SESSION['studentlogin'])) {
-	$email = $_SESSION['email'];
+	$email = $_SESSION['data']['email'];
+	// var_dump($email);die();
 } else {
 	header("location:index.php");
 }
 include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
+
 $sql = "SELECT * from student where email = '$email';";
 $result = mysqli_query($con, $sql);
 $row = $result->fetch_assoc();
@@ -126,6 +128,11 @@ $row = $result->fetch_assoc();
 					<li><a href="dashboard.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
 							<span class="nav-text">Dashboard</span>
+						</a>
+					</li>
+					<li><a href="../index.php" class="ai-icon" aria-expanded="false">
+							<i class="flaticon-381-book"></i>
+							<span class="nav-text">course</span>
 						</a>
 					</li>
 					<li><a href="lessons.php" class="ai-icon" aria-expanded="false">

@@ -1,13 +1,16 @@
 <?php
 session_start();
 if (isset($_SESSION['adminlogin'])) {
-	$adminemail = $_SESSION['adminemail'];
+	$data = $_SESSION['data'];
 } else {
 	header("location:index.php");
 }
+
 include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
-$sql = "SELECT * from adminlogin where email= '$adminemail' and is_active=1;";
-$result = mysqli_query($con, $sql);
+
+$adminemail=$data['email'];
+$sql = "SELECT * from adminlogin where email= '$adminemail';";
+$result = $con->query($sql) or die($con->error);
 $row = $result->fetch_assoc();
 ?>
 
@@ -20,7 +23,7 @@ $row = $result->fetch_assoc();
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>unit - Admin Dashboard </title>
 	<!-- Favicon icon -->
-	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.png">
 
 	<!-- datatables -->
 	<link href="../css/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -34,6 +37,9 @@ $row = $result->fetch_assoc();
 	<style>
 	.btn-buy-now{
 		display: none!important;
+	}
+	#main-wrapper > div.content-body > div > div > div.col-xl-12.col-lg-12 > div > div.card-body > div > form > div > input{
+		margin-top: 0!important;
 	}
 </style>
 </head>
@@ -88,9 +94,9 @@ $row = $result->fetch_assoc();
 							</li> -->
 							<li class="nav-item dropdown header-profile">
 								<a class="nav-link" href="index.html#" role="button" data-bs-toggle="dropdown">
-									<img src="<?= $row['img']; ?>" width="20" alt="" class="cover" />
+									<img src="<?=$row['img']; ?>" width="20" alt="" class="cover" />
 									<div class="header-info">
-										<span><?= $row['name']; ?></span>
+										<span><?=$row['name']; ?></span>
 										<small>Super Admin</small>
 									</div>
 								</a>
@@ -122,6 +128,7 @@ $row = $result->fetch_assoc();
 			</div>
 		</div>
 		<!-- Header end -->
+
 
 		<!-- Sidebar start -->
 		<div class="deznav">

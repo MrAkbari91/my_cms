@@ -100,7 +100,12 @@ input[type=text], select, textarea {
 	opacity: 0.3;
   }
 
-
+.action_btn{
+	width: 35px!important;
+    height: 35px!important;
+    border-radius: 50%;
+    font-size: 18px;
+}
 @media screen  and (min-width: 0) and (max-width: 700px){
 	.my-content, .txt-banner,.stripe {
 		display: none;

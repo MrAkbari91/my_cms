@@ -87,8 +87,6 @@
 						<th>Department</th>
 						<th>Gender</th>
 						<th>Education</th>
-						<th>Mobile</th>
-						<th>Email</th>
 						<th>Joining Date</th>
 						<th>Action</th>
 					</tr>
@@ -100,9 +98,6 @@
 						<td>Architect</td>
 						<td>Male</td>
 						<td>M.COM., P.H.D.</td>
-						<td><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
-						<td><a href="javascript:void(0);"><strong><span class="__cf_email__" data-cfemail="6b02050d042b0e130a061b070e45080406">[email&#160;protected]</span></strong></a>
-						</td>
 						<td>2011/04/25</td>
 						<td>
 							<div class="d-flex">

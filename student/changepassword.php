@@ -1,8 +1,4 @@
-<?php include "include/header.php";
-
-$_SESSION['adminemail'] = $adminemail;
-
-?>
+<?php include "include/header.php";?>
 
 
 <div class="col-xl-12 col-lg-12">

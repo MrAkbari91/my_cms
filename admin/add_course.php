@@ -27,37 +27,37 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Course Name" name="course_name" id="course_name">
+                            <input type="text" class="form-control" name="course_name" id="course_name">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Description</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Course Description" name="course_desc" id="course_desc">
+                            <input type="text" class="form-control" name="course_desc" id="course_desc">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Author</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Course Author" name="course_author" id="course_author">
+                            <input type="text" class="form-control" value="<?=$data['name'];?>" name="course_author" id="course_author" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Duration</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="duration" name="duration" id="duration">
+                            <input type="text" class="form-control" name="duration" id="duration">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Original Price</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="original price" name="original_price" id="original_price">
+                            <input type="text" class="form-control" name="original_price" id="original_price">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Selling Price</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="Selling price" name="selling_price" id="selling_price">
+                            <input type="text" class="form-control" name="selling_price" id="selling_price">
                         </div>
                     </div>
                     <div class="input-group custom_file_input">

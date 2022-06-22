@@ -1,25 +1,11 @@
 <?php include "include/header.php";
 
-$_SESSION['adminemail'] = $adminemail;
-
 ?>
 
 <div class="col-xl-6 col-xxl-6">
     <div class="card">
         <div class="card-header pb-0 border-0">
             <h5 class="mb-0 text-black fs-20">My Profile</h5>
-            <div class="dropdown ms-auto">
-                <div class="btn-link" data-bs-toggle="dropdown">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <rect x="0" y="0" width="24" height="24"></rect>
-                            <circle fill="#000000" cx="12" cy="5" r="2"></circle>
-                            <circle fill="#000000" cx="12" cy="12" r="2"></circle>
-                            <circle fill="#000000" cx="12" cy="19" r="2"></circle>
-                        </g>
-                    </svg>
-                </div>
-            </div>
         </div>
         <div class="card-body">
             <div class="text-center">

@@ -1,5 +1,15 @@
 <?php
+session_start();
+if (isset($_SESSION['adminlogin'])) {
+	$data = $_SESSION['data'];
+} else {
+	header("location:index.php");
+}
 include "../dbcon.php";
+$adminemail=$data['email'];
+$sql = "SELECT * from adminlogin where email= '$adminemail';";
+$result = $con->query($sql) or die($con->error);
+$admin_row = $result->fetch_assoc();
 
 // 
 // add query
@@ -37,25 +47,23 @@ if (isset($_POST['add_course'])) {
 // add student
 if (isset($_POST['add_student'])) {
     // CHecking for Empty Fields
-    if (($_POST['student_name'] == "") || ($_POST['student_email'] == "") || ($_POST['occupation'] == "") || ($_POST['password'] == "")) {
+    if (($_POST['student_name'] == "") || ($_POST['student_email'] == "") || ($_POST['password'] == "")) {
         header("Location: add_student.php?status=fillfild");
     } else {
-        $student_name = $_POST['student_name'];
-        $student_email = $_POST['student_email'];
-        $occupation = $_POST['occupation'];
+        $name = $_POST['student_name'];
+        $email = $_POST['student_email'];
         $password = $_POST['password'];
 
-        $student_img = $_FILES['student_img']['name'];
-        $student_img_temp = $_FILES['student_img']['tmp_name'];
-        $student_img_folder = '../images/student_img/' . $student_img;
+        $img = $_FILES['student_img']['name'];
+        $img_temp = $_FILES['student_img']['tmp_name'];
+        $img_folder = '../images/student_img/' . $student_img;
 
-
-        $query = "SELECT email FROM student WHERE email='" . $student_email . "'";
+        $query = "SELECT email FROM student WHERE email='" . $email . "'";
         $queryresult = $con->query($query);
         $row = $queryresult->num_rows;
         if ($row == 0) {
-            if ($student_img == "") {
-                $sql = "INSERT INTO student (sname, email, pwd, occ) VALUES ('$student_name','$student_email','$password','$occupation')";
+            if ($img == "") {
+                $sql = "INSERT INTO student (sname, email, pwd) VALUES ('$name','$email','$password')";
                 $result = $con->query($sql);
                 if ($result) {
                     header("Location: add_student.php?status=success");
@@ -63,9 +71,9 @@ if (isset($_POST['add_student'])) {
                     header("Location: add_student.php?status=failed");
                 }
             } else {
-                $sql = "INSERT INTO student (sname, email, pwd, occ, img) VALUES ('$student_name','$student_email','$password','$occupation' , '$student_img_folder')";
+                $sql = "INSERT INTO student (sname, email, pwd, img) VALUES ('$name','$email','$password' , '$img_folder')";
                 $result = $con->query($sql);
-                move_uploaded_file($student_img_temp, $student_img_folder);
+                move_uploaded_file($img_temp, $img_folder);
                 if ($result == TRUE) {
                     header("Location: add_student.php?status=success");
                 } else {
@@ -88,24 +96,26 @@ if (isset($_POST['add_lesson'])) {
         $course_name = $_POST['course_name'];
         $lesson_name = $_POST['lesson_name'];
         $lesson_desc = $_POST['lesson_desc'];
+        $created_by =  $admin_row['id'];
+        // var_dump($created_by);die();
 
         $lesson_link = $_FILES['lesson_link']['name'];
         $lesson_link_temp = $_FILES['lesson_link']['tmp_name'];
         $lesson_link_folder = '../images/lesson_videos/' . $lesson_link;
 
 
-        $sql = "INSERT INTO lesson (lesson_name, lesson_description, lesson_link, course_id, course_name) VALUES ('$lesson_name','$lesson_desc','$lesson_link_folder',$course_id , '$course_name')";
+        $sql = "INSERT INTO lesson (lesson_name, lesson_description, lesson_link, course_id, created_by) VALUES ('$lesson_name','$lesson_desc','$lesson_link_folder',$course_id , '$created_by')";
         $result = $con->query($sql);
         if ($result == TRUE) {
+            $sql="SELECT id from ";
             move_uploaded_file($lesson_link_temp, $lesson_link_folder);
-            header("Location: add_lesson.php?status=success");
+            header("Location: manage_lesson.php?status=success&id=$course_id");
         } else {
             header("Location: add_lesson.php?status=failed");
         }
     }
 }
 
-// 
 
 // 
 // update querys
@@ -132,7 +142,7 @@ if (isset($_POST['update_admin'])) {
         $query = "SELECT * FROM adminlogin WHERE email='" . $email . "'";
         $queryresult = $con->query($query);
         $row = $queryresult->num_rows;
-        if ($row == 0) {
+        // if ($row == 0) {
             if ($admin_img == "") {
                 $query = "UPDATE adminlogin set name ='$name', email ='$email', dob ='$dob', phone='$phone', facebook='$facebook', instagram='$instagram', skype='$skype' where id = $id;";
                 $result = $con->query($query);
@@ -153,10 +163,10 @@ if (isset($_POST['update_admin'])) {
                     header("Location: editadmin.php?update_status=failed");
                 }
             }
-        } else {
-            $row = $queryresult->fetch_assoc();
-            header("Location: editadmin.php?&id=$id&update_status=alreadyexists");
-        }
+        // } else {
+        //     $row = $queryresult->fetch_assoc();
+        //     header("Location: editadmin.php?&id=$id&update_status=alreadyexists");
+        // }
     }
 }
 
@@ -210,12 +220,11 @@ if (isset($_POST['update_course'])) {
 if (isset($_POST['update_student'])) {
     $sid = $_POST['sid'];
     // CHecking for Empty Fields
-    if (($_POST['name'] == "") || ($_POST['email'] == "") || ($_POST['occupation'] == "") || ($_POST['dob'] == "") || ($_POST['phone'] == "") || ($_POST['password'] == "")) {
+    if (($_POST['name'] == "") || ($_POST['email'] == "") || ($_POST['dob'] == "") || ($_POST['phone'] == "") || ($_POST['password'] == "")) {
         header("Location: update_student.php?&sid=$sid&status=fillfild");
     } else {
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $occupation = $_POST['occupation'];
         $dob = $_POST['dob'];
         $phone = $_POST['phone'];
         $password = $_POST['password'];
@@ -228,9 +237,9 @@ if (isset($_POST['update_student'])) {
         $query = "SELECT * FROM student WHERE email='" . $email . "'";
         $queryresult = $con->query($query);
         $row = $queryresult->num_rows;
-        if ($row == 0) {
+        if ($row == 1) {
             if ($img == "") {
-                $query = "UPDATE student set sname ='$name', email ='$email', pwd='$password', occ ='$occupation', phone=$phone, dob='$dob', is_update='$date' where sid = $sid;";
+                $query = "UPDATE student set sname ='$name', email ='$email', pwd='$password', phone=$phone, dob='$dob', is_update='$date' where sid = $sid;";
                 $result = $con->query($query);
                 if ($result) {
                     header("Location: student.php?update_status=success");
@@ -238,7 +247,7 @@ if (isset($_POST['update_student'])) {
                     header("Location: update_student.php?&sid=$sid&update_status=failed");
                 }
             } else {
-                $query = "UPDATE student set sname ='$name', email ='$email', pwd='$password', occ ='$occupation',img='$img_folder', phone=$phone, dob='$dob', is_update='$date' where sid = $sid;";
+                $query = "UPDATE student set sname ='$name', email ='$email', pwd='$password', img='$img_folder', phone=$phone, dob='$dob', is_update='$date' where sid = $sid;";
                 $result = $con->query($query);
                 if ($result) {
                     move_uploaded_file($img_temp, $img_folder);
@@ -301,7 +310,7 @@ if (isset($_POST['update_lesson'])) {
 
 
         if ($lesson_link == "") {
-            $query = "UPDATE lesson set lesson_name ='$lesson_name', lesson_description ='$lesson_desc', is_update='$update_date' where lesson_id = $lesson_id;";
+            $query = "UPDATE lesson set lesson_name ='$lesson_name', lesson_description ='$lesson_desc', updated_date='$update_date' where lesson_id = $lesson_id;";
 
             $result = $con->query($query);
 
@@ -311,7 +320,7 @@ if (isset($_POST['update_lesson'])) {
                 header("Location: update_lesson.php?update_status=failed&lesson_id=$lesson_id");
             }
         } else {
-            $query = "UPDATE lesson set lesson_name ='$lesson_name', lesson_description ='$lesson_desc', lesson_link='$lesson_link_folder', is_update='$update_date' where lesson_id = $lesson_id;";
+            $query = "UPDATE lesson set lesson_name ='$lesson_name', lesson_description ='$lesson_desc', lesson_link='$lesson_link_folder', updated_date='$update_date' where lesson_id = $lesson_id;";
 
             $result = $con->query($query);
 
@@ -328,25 +337,51 @@ if (isset($_POST['update_lesson'])) {
 
 // 
 // 
-// delete querys
-// 
-// delete course
+// course active deactive
 if ($_GET['from'] == "course") {
-    if ($_GET['type'] == "delete") {
+    if ($_GET['type'] == "active") {
         $id = $_GET['id'];
-        $query = "UPDATE student set is_active = 0 where id = $id;";
+        $query = "UPDATE courses set is_active = 1 where id = $id;";
         $result = $con->prepare($query);
         $output = $result->execute();
         if ($output) {
-            header("Location: student.php?delete_status=success");
+            header("Location: course.php?activate_status=success");
         } else {
-            header("Location: student.php?delete_status=failed");
+            header("Location: course.php?activate_status=failed");
+        }
+    }
+}
+
+if ($_GET['from'] == "course") {
+    if ($_GET['type'] == "delete") {
+        $id = $_GET['id'];
+        $query = "UPDATE courses set is_active = 0 where id = $id;";
+        $result = $con->prepare($query);
+        $output = $result->execute();
+        if ($output) {
+            header("Location: course.php?deactivate_status=success");
+        } else {
+            header("Location: course.php?deactivate_status=failed");
         }
     }
 }
 
 
-// delete student
+// student active deactive
+if ($_GET['from'] == "student") {
+    if ($_GET['type'] == "active") {
+        $sid = $_GET['sid'];
+        $query = "UPDATE student set is_active = 1 where sid = $sid;";
+        $result = $con->prepare($query);
+        $output = $result->execute();
+        if ($output) {
+            header("Location: student.php?activate_status=success");
+        } else {
+            header("Location: student.php?activate_status=failed");
+        }
+    }
+}
+
 if ($_GET['from'] == "student") {
     if ($_GET['type'] == "delete") {
         $sid = $_GET['sid'];
@@ -354,24 +389,41 @@ if ($_GET['from'] == "student") {
         $result = $con->prepare($query);
         $output = $result->execute();
         if ($output) {
-            header("Location: student.php?delete_status=success");
+            header("Location: student.php?deactivate_status=success");
         } else {
-            header("Location: student.php?delete_status=failed");
+            header("Location: student.php?deactivate_status=failed");
         }
     }
 }
 
-// delete lesson
+
+//  lesson active deactive
 if ($_GET['from'] == "lesson") {
-    if ($_GET['type'] == "delete") {
+    if ($_GET['type'] == "active") {
         $id = $_GET['lesson_id'];
-        $query = "UPDATE student set is_active = 0 where sid = $id;";
+        $course_id = $_GET['course_id'];
+        $query = "UPDATE lesson set is_active = 1 where lesson_id = $id;";
         $result = $con->prepare($query);
         $output = $result->execute();
         if ($output) {
-            header("Location: lesson.php?delete_status=success");
+            header("Location: manage_lesson.php?active_status=success&id=$course_id");
         } else {
-            header("Location: lesson.php?delete_status=failed");
+            header("Location: manage_lesson.php?active_status=failed&id=$course_id");
+        }
+    }
+}
+
+if ($_GET['from'] == "lesson") {
+    if ($_GET['type'] == "delete") {
+        $id = $_GET['lesson_id'];
+        $course_id = $_GET['course_id'];
+        $query = "UPDATE lesson set is_active = 0 where lesson_id = $id;";
+        $result = $con->prepare($query);
+        $output = $result->execute();
+        if ($output) {
+            header("Location: manage_lesson.php?delete_status=success&id=$course_id");
+        } else {
+            header("Location: manage_lesson.php?delete_status=failed&id=$course_id");
         }
     }
 }

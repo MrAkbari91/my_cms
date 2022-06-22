@@ -13,23 +13,20 @@
                     <?php
                     if (isset($_GET['status']) && $_GET['status'] == "fillfild") { ?>
                         <p class="text-center alert alert-danger"> Fill All Fild</p>
-                    <?php    }
-                    ?>
+                    <?php } ?>
                     <?php
                     if (isset($_GET['status']) && $_GET['status'] == "alreadyexists") { ?>
                         <p class="text-center alert alert-danger"> Email Already Exists</p>
-                    <?php    }
-                    ?>
+                    <?php } ?>
                     <?php
                     if (isset($_GET['status']) && $_GET['status'] == "success") { ?>
                         <p class="text-center alert alert-success"> Student Added successfully</p>
-                    <?php    }
-                    ?>
+                    <?php } ?>
                     <?php
                     if (isset($_GET['status']) && $_GET['status'] == "failed") { ?>
                         <p class="text-center alert alert-danger"> Student Add Failed!</p>
-                    <?php    }
-                    ?>
+                    <?php } ?>
+                    
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Name</label>
                         <div class="col-sm-9">
@@ -43,19 +40,13 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Occupation</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" placeholder="occupation" name="occupation">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Password</label>
                         <div class="col-sm-9">
                             <input type="password" class="form-control" placeholder="Password" name="password">
                         </div>
                     </div>
                     <div class="input-group custom_file_input">
-                        <label class="col-sm-3 col-form-label">Course Banner image</label>
+                        <label class="col-sm-3 col-form-label">Student image</label>
                         <div class="input-group custom_file_input">
                             <div class="form-file">
                                 <input type="file" class="form-file-input form-control" name="student_img" id="student_img">

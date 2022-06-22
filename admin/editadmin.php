@@ -1,8 +1,5 @@
 <?php include "include/header.php";
 
-$_SESSION['adminemail'] = $adminemail;
-
-
 ?>
 
 
@@ -26,18 +23,18 @@ $_SESSION['adminemail'] = $adminemail;
                     ?>
                     <?php
                     if (isset($_GET['update_status']) && $_GET['update_status'] == "success") { ?>
-                        <p class="text-center solid alert h3 alert-success"> Student Update successfully</p>
+                        <p class="text-center solid alert h3 alert-success"> Update successfully</p>
                     <?php    }
                     ?>
                     <?php
                     if (isset($_GET['update_status']) && $_GET['update_status'] == "failed") { ?>
-                        <p class="text-center solid alert h3 alert-danger"> Student Update Failed!</p>
+                        <p class="text-center solid alert h3 alert-danger"> Update Failed!</p>
                     <?php    }
                     ?>
                     <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">id</label>
+                        <label class="col-sm-3 col-form-label d-none">id</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="id" value="<?= $row['id']; ?>">
+                            <input type="hidden" class="form-control" name="id" value="<?= $row['id']; ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -49,7 +46,7 @@ $_SESSION['adminemail'] = $adminemail;
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" value="<?= $row['email']; ?>" name="email">
+                            <input type="email" class="form-control" value="<?= $row['email']; ?>" name="email" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">

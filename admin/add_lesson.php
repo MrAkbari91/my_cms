@@ -1,4 +1,12 @@
-<?php include "include/header.php"; ?>
+<?php include "include/header.php"; 
+$id = $_GET['course_id'];
+
+// var_dump($id);die();
+$sql = "SELECT * FROM courses where id=$id";
+$result = mysqli_query($con, $sql);
+$row=$result->fetch_assoc();
+
+?>
 <!-- Content body start -->
 
 <div class="col-xl-12 col-lg-6">
@@ -15,11 +23,6 @@
                     <?php    }
                     ?>
                     <?php
-                    if (isset($_GET['status']) && $_GET['status'] == "success") { ?>
-                        <p class="text-center alert alert-success"> lesson Added successfully</p>
-                    <?php    }
-                    ?>
-                    <?php
                     if (isset($_GET['status']) && $_GET['status'] == "failed") { ?>
                         <p class="text-center alert alert-danger"> lesson Add Failed!</p>
                     <?php    }
@@ -27,13 +30,13 @@
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course ID</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="course_id" id="course_id" value="<?php if(isset($_SESSION['course_id'])){echo $_SESSION['course_id'];}?>" readonly>
+                            <input type="text" class="form-control" name="course_id" id="course_id" value="<?=$row['id'];?>" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="course_name" id="course_name" value="<?php if(isset($_SESSION['course_name'])){echo $_SESSION['course_name'];}?>" readonly>
+                            <input type="text" class="form-control" name="course_name" id="course_name" value="<?=$row['course_name'];?>" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -60,7 +63,7 @@
                         <span class="col-sm-3"></span>
                         <div class="col-sm-6">
                             <input type="submit" class="btn btn-success my-5" id="add_lesson" name="add_lesson" value="Add lesson">
-                            <a href="lessons.php" class="btn btn-danger my-5">Close</a>
+                            <a href="manage_lesson.php?id=<?=$_SESSION['course_id'];?>" class="btn btn-danger my-5">Close</a>
                         </div>
                     </div>
                 </form>

@@ -23,8 +23,8 @@ $row = $result->fetch_assoc();
                     <?php    }
                     ?>
                     <?php
-                    if (isset($_GET['status']) && $_GET['update_status'] == "success") { ?>
-                        <p class="text-center alert alert-success"> lesson Added successfully</p>
+                    if (isset($_GET['update_status']) && $_GET['update_status'] == "success") { ?>
+                        <p class="text-center alert alert-success"> lesson Update successfully</p>
                     <?php    }
                     ?>
                     <?php
@@ -35,13 +35,13 @@ $row = $result->fetch_assoc();
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course ID</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="course_id" id="course_id" value="<?php if(isset($_SESSION['course_id'])){echo $_SESSION['course_id'];}?>" readonly>
+                            <input type="text" class="form-control" name="course_id" id="course_id" value="<?=$row['course_id'];?>" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Course Name</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="course_name" id="course_name" value="<?php if(isset($_SESSION['course_name'])){echo $_SESSION['course_name'];}?>" readonly>
+                            <input type="text" class="form-control" name="course_name" id="course_name" value="<?=$row['course_name'];?>" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">

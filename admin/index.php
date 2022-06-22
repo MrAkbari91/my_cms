@@ -1,9 +1,9 @@
 <?php
 include "../dbcon.php";
 session_start();
-if(isset($_SESSION['adminlogin']) && $_SESSION['adminlogin']){
-    header("Location: dashboard.php");
-    exit();
+if (isset($_SESSION['adminlogin']) && $_SESSION['adminlogin']) {
+	header("Location: dashboard.php");
+	exit();
 }
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ if(isset($_SESSION['adminlogin']) && $_SESSION['adminlogin']){
 	<title>Student Login</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="../css/login.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
@@ -118,13 +118,13 @@ if(isset($_SESSION['adminlogin']) && $_SESSION['adminlogin']){
 
 		<div class="inputGroup inputGroup1">
 			<label for="email1">Email</label>
-			<input type="text" id="email" autocomplete="off" name="adminemail" />
+			<input type="text" id="email" autocomplete="off" name="adminemail" class="email" />
 
 			<span class="indicator"></span>
 		</div>
 		<div class="inputGroup inputGroup2">
 			<label for="password">Password</label>
-			<input type="password" id="password" autocomplete="off" name="lpwd" />
+			<input type="password" id="password" autocomplete="off" name="lpwd" class="password"/>
 		</div>
 		<div class="inputGroup inputGroup3">
 			<div id="statusmsglogin"></div>

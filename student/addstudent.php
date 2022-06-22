@@ -39,10 +39,10 @@ if (!isset($_SESSION)) {
             $sql ="SELECT * FROM student WHERE email='".$email."' AND pwd='".$pwd."' and is_active=1";
             $result =$con->query($sql);
             $row=$result->num_rows;
-           
             if($row===1){
+                $row=$result->fetch_assoc();
                 $_SESSION['studentlogin']=true;
-                $_SESSION['email']=$email;
+                $_SESSION['data']=$row;
                 echo json_encode($row);
             } else if($row === 0){
                 echo json_encode($row);

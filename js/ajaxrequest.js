@@ -92,6 +92,8 @@ function clearfield() {
 function studentlogin() {
     var email = $("#email").val();
     var pwd = $("#password").val();
+    console.log(email);
+    console.log(pwd);
     $.ajax({
         url: "student/addstudent.php",
         method: "POST",
@@ -101,14 +103,17 @@ function studentlogin() {
             pwd: pwd,
         },
         success: function (data) {
-            if (data == 0) {
-                $("#statusmsglogin").html("<div class='alert alert-danger text-center'>invalid email id or password</div>");
-            } else if (data == 1) {
+            const data1 = JSON.parse(data); 
+            console.log(data1['is_active']);
+            if (data1['is_active'] == 1) {
+                // redirec
                 $("#login").html('<div class="spinner-border text-success text-center" role="status"></div>');
                 setTimeout(() => {
-                    window.location.href = "index.php";
+                    window.location.href = "student/dashboard.php";
                 }, 1000);
-            }
+            }else if (data1['is_active'] == 0) {
+                $("#statusmsglogin").html("<div class='alert alert-danger text-center'>invalid email id or password</div>");
+            } 
         },
     });
 }
@@ -132,6 +137,24 @@ function adminlogin() {
         success: function (data) {
             if (data == 0) {
                 $("#statusmsglogin").html("<div class='alert alert-danger text-center'>invalid email id or password</div>");
+            } else if (data == 1) {
+                window.location.href = "dashboard.php";
+            }
+        },
+    });
+}
+
+
+function delete_student(){
+    $.ajax({
+        url: "../admin/query.php",
+        method: "POST",
+        data: {
+            delete_student: "1",
+        },
+        success: function (data) {
+            if (data == 0) {
+                $("#status").html("<div class='text-center alert alert-danger solid alert-dismissible fade show'>Delete Student</div>");
             } else if (data == 1) {
                 window.location.href = "dashboard.php";
             }

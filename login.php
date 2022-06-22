@@ -1,34 +1,3 @@
-<!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="loginModalLabel">Login</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form id="login">
-					<div class="form-group">
-						<i class="fas fa-envelope"></i><label for="lemail" class="pl-2 font-weight-bold">Email</label>
-						<input type="email" class="form-control" name="lemail" id="lemail" placeholder="Email">
-
-					</div>
-					<div class="form-group">
-						<i class="fas fa-key"></i><label for="lpwd" class="pl-2 font-weight-bold">Password</label>
-						<input type="password" class="form-control" name="lpwd" id="lpwd" placeholder="Password">
-					</div>
-				</form>
-			</div>
-			<div class="modal-footer">
-				<span id="statusmsglogin"></span>
-				<button type="button" class="btn btn-primary" id="loginbtn" onclick="login()">Login</button>
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div> -->
-
 <?php 
 session_start();
 if(isset($_SESSION['studentlogin']) && $_SESSION['studentlogin']){
@@ -51,7 +20,6 @@ if(isset($_SESSION['studentlogin']) && $_SESSION['studentlogin']){
 
 	<link rel="stylesheet" href="css/login.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-
 </head>
 
 <body>
@@ -149,13 +117,13 @@ if(isset($_SESSION['studentlogin']) && $_SESSION['studentlogin']){
 
 		<div class="inputGroup inputGroup1">
 			<label for="email1">Email</label>
-			<input type="text" id="email" autocomplete="off" name="lemail" />
+			<input type="text" id="email" autocomplete="off" name="lemail" class="email" />
 
 			<span class="indicator"></span>
 		</div>
 		<div class="inputGroup inputGroup2">
 			<label for="password">Password</label>
-			<input type="password" id="password" autocomplete="off" name="lpwd" />
+			<input type="password" id="password" autocomplete="off" name="lpwd" class="password" />
 		</div>
 		<div class="inputGroup inputGroup3">
 			<div id="statusmsglogin"></div>
