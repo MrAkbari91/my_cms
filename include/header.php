@@ -1,6 +1,9 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +36,7 @@
 
 <body>
     <!-- start navbar -->
-    <nav class="navbar navbar-expand-sm navbar-dark pl-5 fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-danger pl-5 fixed-top">
         <a class="navbar-brand" href="index.php">Home</a>
         <span class="navbar-text">Learn and Implement</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,33 +49,33 @@
                 </li>
                 <li class="nav-item custom-nav-item">
                     <a class="nav-link" href="courses.php">Course</a>
+                    
                 </li>
-                <li class="nav-item custom-nav-item">
-                    <a class="nav-link" href="paymentstatus.php">Payment</a>
-                </li>
-
                 <?php
                 session_start();
                 if(isset($_SESSION['studentlogin'])){
                     echo '<li class="nav-item custom-nav-item">
+                        <a class="nav-link" href="paymentstatus.php">Payment</a>
+                    </li>
+                    <li class="nav-item custom-nav-item">
                     <a class="nav-link" href="student/dashboard.php">My Profile</a>
                 </li>
                 <li class="nav-item custom-nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>
                 </li>';
                 } else {
-                    echo '<li class="nav-item custom-nav-item" data-toggle="modal" data-target="#loginModal">
+                    echo '<li class="nav-item custom-nav-item">
                     <a class="nav-link" href="login.php">Login</a>
                 </li>
-                <li class="nav-item custom-nav-item" data-toggle="modal" data-target="#registrationModal">
-                    <a class="nav-link" href="#">Sign up</a>
+                <li class="nav-item custom-nav-item">
+                    <a class="nav-link" href="registration.php">Sign up</a>
                 </li>';
                 } ?>
                 <!-- <li class="nav-item custom-nav-item">
                     <a class="nav-link" href="feedback.php">Feedback</a>
                 </li> -->
                 <li class="nav-item custom-nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="contact.php">Contact</a>
                 </li>
             </ul>
         </div>

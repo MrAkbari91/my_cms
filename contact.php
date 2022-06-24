@@ -1,4 +1,11 @@
-<div class="container my-5" id="contact">
+<!-- start header -->
+<?php
+include('include/header.php')
+?>
+<!-- end header -->
+
+
+<div class="container mt-8" id="contact">
 	<!-- contact us container -->
 	<h2 class="text-center mb-4"> Contact Us</h2> <!-- contact us heading -->
 	<div class="row">
@@ -23,3 +30,9 @@
 		</div> <!-- end contact us 2nd column -->
 	</div> <!-- end contact us row -->
 </div> <!-- end contact us container -->
+
+<!-- start footer -->
+<?php
+include('include/footer.php')
+?>
+<!-- end footer -->

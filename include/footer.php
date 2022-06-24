@@ -5,11 +5,6 @@
 <!-- end footer -->
 
 
-<!-- start registration form -->
-<?php
-include('registration.php')
-?>
-<!-- end registration form -->
 
 
 

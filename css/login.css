@@ -8,7 +8,6 @@ html {
     background-color: #eff3f4;
     position: relative;
     width: 100%;
-    height: 100%;
     font-size: 16px;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
@@ -16,16 +15,13 @@ html {
   }
   
   form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
     display: block;
     width: 100%;
     max-width: 400px;
-    background-color: #fff;
-    margin: 0;
-    padding: 2.25em;
+    background-color: #dc3545ed;
+    margin: 30px auto;
+    padding: 13px 2.25em;
     box-sizing: border-box;
     border: solid 1px #ddd;
     border-radius: 0.5em;
@@ -38,7 +34,7 @@ html {
     margin: 0 auto 1em;
     border-radius: 50%;
     background: none;
-    border: solid 2.5px #3a5e77;
+    border: solid 2.5px #ffffff;
     overflow: hidden;
     pointer-events: none;
   }
@@ -58,7 +54,7 @@ html {
     pointer-events: none;
   }
   form .inputGroup {
-    margin: 0 0 2em;
+    margin: 0 0 10px;
     padding: 0;
     position: relative;
   }
@@ -69,7 +65,7 @@ html {
     margin: 0 0 12px;
     display: block;
     font-size: 1.25em;
-    color: #217093;
+    color: #ffffff;
     font-weight: 700;
     font-family: inherit;
   }
@@ -80,12 +76,12 @@ html {
     margin: 0;
     padding: 0 1em 0;
     background-color: #f3fafd;
-    border: solid 2px #217093;
+    border: solid 2px #dc3545;
     border-radius: 4px;
     -webkit-appearance: none;
     box-sizing: border-box;
     width: 100%;
-    height: 65px;
+    height: 50px;
     font-size: 1.55em;
     color: #353538;
     font-weight: 600;
@@ -101,7 +97,7 @@ html {
   }
   form input[type=email],
   form input[type=text] {
-    padding: 14px 1em 0px;
+    padding: 0 13px;
   }
   form button {
     display: block;
@@ -113,7 +109,6 @@ html {
     box-sizing: border-box;
     box-shadow: none;
     width: 100%;
-    height: 65px;
     font-size: 1.55em;
     color: #fff;
     font-weight: 600;
@@ -145,3 +140,15 @@ html {
     transform: translate(1.4em, 2em) scale(0.65);
     opacity: 1;
   }
+
+  .btn-danger {
+    color: #000!important;
+    background-color: #fff!important;
+    border-color: #fff!important;
+}
+.text-primary {
+  color: #fff!important;
+}
+p{
+  color: #abcabd !important;;
+}

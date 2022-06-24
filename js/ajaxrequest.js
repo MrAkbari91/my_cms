@@ -109,7 +109,7 @@ function studentlogin() {
                 // redirec
                 $("#login").html('<div class="spinner-border text-success text-center" role="status"></div>');
                 setTimeout(() => {
-                    window.location.href = "student/dashboard.php";
+                    window.location.href = "index.php";
                 }, 1000);
             }else if (data1['is_active'] == 0) {
                 $("#statusmsglogin").html("<div class='alert alert-danger text-center'>invalid email id or password</div>");
