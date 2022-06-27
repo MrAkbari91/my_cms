@@ -14,26 +14,26 @@
             <div class="table-responsive">
 
                 <table id="example3" class="display" style="min-width: 845px">
-                <?php
-                if (isset($_GET['activate_status']) && $_GET['activate_status'] == "success") { ?>
-                    <p class="text-center alert alert-success solid alert-dismissible fade show"> Course activate  Successfully</p>
-                <?php    }
-                ?>
-                <?php
-                if (isset($_GET['activate_status']) && $_GET['activate_status'] == "failed") { ?>
-                    <p class="text-center alert alert-danger solid alert-dismissible fade show">Can't activate Course!</p>
-                <?php    }
-                ?>
-                <?php
-                if (isset($_GET['deactivate_status']) && $_GET['deactivate_status'] == "success") { ?>
-                    <p class="text-center alert alert-success solid alert-dismissible fade show"> Course deactivate successfully</p>
-                <?php    }
-                ?>
-                <?php
-                if (isset($_GET['deactivate_status']) && $_GET['deactivate_status'] == "failed") { ?>
-                    <p class="text-center alert alert-danger solid alert-dismissible fade show"> Course Delete Failed!</p>
-                <?php    }
-                ?>
+                    <?php
+                    if (isset($_GET['activate_status']) && $_GET['activate_status'] == "success") { ?>
+                        <p class="text-center alert alert-success solid alert-dismissible fade show"> Course activate Successfully</p>
+                    <?php    }
+                    ?>
+                    <?php
+                    if (isset($_GET['activate_status']) && $_GET['activate_status'] == "failed") { ?>
+                        <p class="text-center alert alert-danger solid alert-dismissible fade show">Can't activate Course!</p>
+                    <?php    }
+                    ?>
+                    <?php
+                    if (isset($_GET['deactivate_status']) && $_GET['deactivate_status'] == "success") { ?>
+                        <p class="text-center alert alert-success solid alert-dismissible fade show"> Course deactivate successfully</p>
+                    <?php    }
+                    ?>
+                    <?php
+                    if (isset($_GET['deactivate_status']) && $_GET['deactivate_status'] == "failed") { ?>
+                        <p class="text-center alert alert-danger solid alert-dismissible fade show"> Course Delete Failed!</p>
+                    <?php    }
+                    ?>
                     <thead>
                         <tr>
                             <th></th>
@@ -82,7 +82,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 <!-- table end -->
 </div>

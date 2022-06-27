@@ -45,16 +45,6 @@ $row = $result->fetch_assoc();
 </head>
 
 <body>
-	<!-- Preloader start -->
-	<div id="preloader">
-		<div class="sk-three-bounce">
-			<div class="sk-child sk-bounce1"></div>
-			<div class="sk-child sk-bounce2"></div>
-			<div class="sk-child sk-bounce3"></div>
-		</div>
-	</div>
-	<!-- Preloader end -->
-
 	<!-- Main wrapper start -->
 	<div id="main-wrapper">
 
@@ -161,6 +151,11 @@ $row = $result->fetch_assoc();
 							<li><a href="add_student.php">Add Student</a></li>
 							<li><a href="student.php">Student</a></li>
 						</ul>
+					</li>
+					<li><a href="feedback.php" class="ai-icon" aria-expanded="false">
+							<i class="fab fa-comments-o"></i>
+							<span class="nav-text">Feedback</span>
+						</a>
 					</li>
 					<li><a href="sellrepoart.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-list-1"></i>

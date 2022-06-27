@@ -1,13 +1,12 @@
 <!-- start header -->
 <?php
-include('include/header.php')
+include('include/header.php');
 ?>
 <!-- end header -->
 
 
-
 <!-- start video background -->
-<div class="container-fluid remove-vid-marg">
+<div class="container-fluid remove-vid-marg position-relative">
 	<div class="vid-parent">
 		<video playsinline autoplay muted loop>
 			<source src="image/banvid.mp4">
@@ -18,10 +17,10 @@ include('include/header.php')
 		<h1 class="my-content">Welcome to ischool</h1>
 		<small class="my-content">Learn and Implement</small><br>
 		<?php
-		if (!isset($_SESSION['is_login'])) {
+		if (!isset($_SESSION['studentlogin'])) {
 			echo '<a href="" class="btn btn-danger mt-3" type="button" data-toggle="modal" data-target="#registrationModal">Get Starded</a>';
 		} else {
-			echo '<a href="student/dashbord.php" class="btn btn-primary mt-3" type="button">My profile</a>';
+			echo '<a href="student/profile.php" class="btn btn-danger mt-3" type="button">My profile</a>';
 		}
 		?>
 	</div>

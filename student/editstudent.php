@@ -1,8 +1,8 @@
 <?php include "include/header.php";
 
-$_SESSION['adminemail'] = $adminemail;
-
+// $_SESSION['adminemail'] = $adminemail;
 ?>
+
 
 
 <div class="col-xl-12 col-lg-12">
@@ -14,7 +14,7 @@ $_SESSION['adminemail'] = $adminemail;
             <div class="basic-form">
                 <form action="query.php" method="post" enctype="multipart/form-data">
                     <?php
-                    if (isset($_GET['update_status']) && $_GET['update_status'] == "fillfild") { ?>
+                    if (isset($_GET['status']) && $_GET['status'] == "fillfild") { ?>
                         <p class="text-center alert-alt solid h3 alert alert-danger"> Fill All Fild</p>
                     <?php    }
                     ?>
@@ -31,7 +31,7 @@ $_SESSION['adminemail'] = $adminemail;
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">id</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="sid" value="<?= $row['sid']; ?>">
+                            <input type="text" class="form-control" name="sid" value="<?= $row['sid']; ?>" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -43,7 +43,7 @@ $_SESSION['adminemail'] = $adminemail;
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" value="<?= $row['email']; ?>" name="email">
+                            <input type="email" class="form-control" value="<?= $row['email']; ?>" name="email" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -56,12 +56,6 @@ $_SESSION['adminemail'] = $adminemail;
                         <label class="col-sm-3 col-form-label">Phone</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" value="<?= $row['phone']; ?>" name="phone">
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Occupation</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" value="<?= $row['occ']; ?>" name="occupation">
                         </div>
                     </div>
                     <div class="input-group custom_file_input">

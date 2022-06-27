@@ -28,6 +28,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
 
 
     <!-- custom css -->
+    <link rel="stylesheet" href="css/css/style.css">
     <link rel="stylesheet" href="css/style.css">
 
 
@@ -58,7 +59,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
                         <a class="nav-link" href="paymentstatus.php">Payment</a>
                     </li>
                     <li class="nav-item custom-nav-item">
-                    <a class="nav-link" href="student/dashboard.php">My Profile</a>
+                    <a class="nav-link" href="student/profile.php">My Profile</a>
                 </li>
                 <li class="nav-item custom-nav-item">
                     <a class="nav-link" href="logout.php">Logout</a>

@@ -92,8 +92,6 @@ function clearfield() {
 function studentlogin() {
     var email = $("#email").val();
     var pwd = $("#password").val();
-    console.log(email);
-    console.log(pwd);
     $.ajax({
         url: "student/addstudent.php",
         method: "POST",

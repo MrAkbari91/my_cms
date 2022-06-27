@@ -9,16 +9,6 @@ if (isset($_GET['course_id'])) {
 <!-- end header -->
 
 
-
-<!-- img start -->
-<!-- <div class="container-fluid bg-dark">
-    <div class="row">
-        <img src="image/course1.jpg" alt="bg img" class="w-100 image">
-    </div>
-</div> -->
-
-<!-- img end -->
-
 <?php
 
 $sql = "SELECT * FROM courses where id=$id";
@@ -38,13 +28,16 @@ $row = $result->fetch_assoc();
                 <h5 class="card-title">Course Name : <?= $row['course_name']; ?></h5>
                 <p class="card-text"><?= $row['courses_desc']; ?></p>
                 <p class="card-text">Duration: <?= $row['duration']; ?></p>
-                <!-- <form action="chackout.php" method="post"> -->
+                <form action="chackout.php" method="post">
                     <p class="card-text d-inline">Price: <small><del>&#8377 <?= $row['original_price']; ?>
-                        </del></small><span class="font-weight-bolder">&#8377 <?= $row['price']; ?></span>
+                            </del></small><span class="font-weight-bolder">&#8377 <?= $row['price']; ?></span>
                     </p>
-                    <!-- input -->
-                    <a href="chackout.php?course_id=<?=$row['id'];?>" class="btn btn-primary text-white font-weight-bolder float-right" name="buy">Buy Now</a>
-                <!-- </form> -->
+                    <input type="hidden" value="<?= $row['id']; ?>" name="id">
+                    <input type="hidden" value="<?= $row['price']; ?>" name="price">
+
+                    <button type="submit" class="btn btn-primary text-white font-weight-bolder float-right" name="buy">Buy Now</button>
+                    <!-- <a href="chackout.php?id=<?= $row['id']; ?>" class="btn btn-primary text-white font-weight-bolder float-right" name="buy">Buy Now</a> -->
+                </form>
             </div>
         </div>
     </div>

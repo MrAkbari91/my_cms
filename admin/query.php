@@ -5,11 +5,12 @@ if (isset($_SESSION['adminlogin'])) {
 } else {
 	header("location:index.php");
 }
-include "../dbcon.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
 $adminemail=$data['email'];
 $sql = "SELECT * from adminlogin where email= '$adminemail';";
 $result = $con->query($sql) or die($con->error);
 $admin_row = $result->fetch_assoc();
+
 
 // 
 // add query
@@ -115,6 +116,7 @@ if (isset($_POST['add_lesson'])) {
         }
     }
 }
+
 
 
 // 
@@ -295,7 +297,7 @@ if (isset($_POST['update_password'])) {
 if (isset($_POST['update_lesson'])) {
     $lesson_id = $_POST['lesson_id'];
     // CHecking for Empty Fields
-    if (($_POST['course_id'] == "") || ($_POST['course_name'] == "") || ($_POST['lesson_name'] == "") || ($_POST['lesson_desc'] == "")) {
+    if (($_POST['course_id'] == "") || ($_POST['lesson_name'] == "") || ($_POST['lesson_desc'] == "")) {
         header("Location: update_lesson.php?status=fillfild&from=lession&id=$lesson_id");
     } else {
         $course_id = $_POST['course_id'];
@@ -335,9 +337,12 @@ if (isset($_POST['update_lesson'])) {
 }
 
 
+
+
+
 // 
 // 
-// course active deactive
+// course active 
 if ($_GET['from'] == "course") {
     if ($_GET['type'] == "active") {
         $id = $_GET['id'];
@@ -351,7 +356,7 @@ if ($_GET['from'] == "course") {
         }
     }
 }
-
+// course  deactive
 if ($_GET['from'] == "course") {
     if ($_GET['type'] == "delete") {
         $id = $_GET['id'];
@@ -367,7 +372,7 @@ if ($_GET['from'] == "course") {
 }
 
 
-// student active deactive
+// student active 
 if ($_GET['from'] == "student") {
     if ($_GET['type'] == "active") {
         $sid = $_GET['sid'];
@@ -381,6 +386,7 @@ if ($_GET['from'] == "student") {
         }
     }
 }
+// student deactive
 
 if ($_GET['from'] == "student") {
     if ($_GET['type'] == "delete") {
@@ -397,7 +403,7 @@ if ($_GET['from'] == "student") {
 }
 
 
-//  lesson active deactive
+//  lesson active 
 if ($_GET['from'] == "lesson") {
     if ($_GET['type'] == "active") {
         $id = $_GET['lesson_id'];
@@ -412,6 +418,7 @@ if ($_GET['from'] == "lesson") {
         }
     }
 }
+//  lesson  deactive
 
 if ($_GET['from'] == "lesson") {
     if ($_GET['type'] == "delete") {
@@ -428,7 +435,3 @@ if ($_GET['from'] == "lesson") {
     }
 }
 
-
-
-
-// search lesson

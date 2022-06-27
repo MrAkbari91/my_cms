@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(isset($_SESSION['studentlogin']) && $_SESSION['studentlogin']){
-    header("Location: student/dashboard.php");
+    header("Location: index.php");
     exit();
 }
 

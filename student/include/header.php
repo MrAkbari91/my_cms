@@ -3,7 +3,6 @@ session_start();
 
 if (isset($_SESSION['studentlogin'])) {
 	$email = $_SESSION['data']['email'];
-	// var_dump($email);die();
 } else {
 	header("location:index.php");
 }
@@ -40,16 +39,6 @@ $row = $result->fetch_assoc();
 </head>
 
 <body>
-	<!-- Preloader start -->
-	<div id="preloader">
-		<div class="sk-three-bounce">
-			<div class="sk-child sk-bounce1"></div>
-			<div class="sk-child sk-bounce2"></div>
-			<div class="sk-child sk-bounce3"></div>
-		</div>
-	</div>
-	<!-- Preloader end -->
-
 	<!-- Main wrapper start -->
 	<div id="main-wrapper">
 
@@ -102,7 +91,7 @@ $row = $result->fetch_assoc();
 									</a>
 									<a href="changepassword.php" class="dropdown-item ai-icon">
 										<i class="flaticon-381-key"></i>
-										<span class="ms-2">Profile </span>
+										<span class="ms-2">change password </span>
 									</a>
 									<a href="../logout.php" class="dropdown-item ai-icon">
 										<svg id="icon-logout" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -125,24 +114,29 @@ $row = $result->fetch_assoc();
 		<div class="deznav">
 			<div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
-					<li><a href="dashboard.php" class="ai-icon" aria-expanded="false">
+					<!-- <li><a href="dashboard.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
-					</li>
-					<li><a href="../index.php" class="ai-icon" aria-expanded="false">
+					</li> -->
+					<li><a href="../courses.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-book"></i>
-							<span class="nav-text">course</span>
+							<span class="nav-text">Course</span>
 						</a>
 					</li>
-					<li><a href="lessons.php" class="ai-icon" aria-expanded="false">
+					<li><a href="mycourse.php" class="ai-icon" aria-expanded="false">
+							<i class="flaticon-381-book"></i>
+							<span class="nav-text">My Course</span>
+						</a>
+					</li>
+					<!-- <li><a href="lessons.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-notebook-1"></i>
 							<span class="nav-text">Lessons</span>
 						</a>
-					</li>
+					</li> -->
 					<li><a href="feedback.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-list-1"></i>
-							<span class="nav-text">feedback</span>
+							<span class="nav-text">Feedback</span>
 						</a>
 					</li>
 					<li><a href="changepassword.php" class="ai-icon" aria-expanded="false">
@@ -166,4 +160,4 @@ $row = $result->fetch_assoc();
 		<div class="content-body">
 			<div class="container-fluid">
 				<!-- row -->
-				<div class="row">
+				<div class="row ">

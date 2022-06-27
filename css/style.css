@@ -1,12 +1,14 @@
  .mt-8 {
  	margin-top: 8rem!important;
  }
-
+ /* h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6{
+	color: #fff;
+ } */
  .navbar-brand {
  	font-family: 'Ubuntu', sans-serif;
  	font-size: 2em;
  	font-weight: bold;
- 	color: #fff;
+ 	color: #fff!important;
  }
 
  .custom-nav .custom-nav-item a {
@@ -50,9 +52,12 @@
  	top: 35%;
  	left: 35%;
  	text-align: center;
- 	color: #fff;
+ 	color: #fff!important;
  }
-
+ .my-content,  .bottom-banner .col-sm h5
+ {
+	color:#fff;
+ }
  .bottom-banner {
  	color: #fff;
  	padding: 10px;

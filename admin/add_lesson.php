@@ -63,7 +63,7 @@ $row=$result->fetch_assoc();
                         <span class="col-sm-3"></span>
                         <div class="col-sm-6">
                             <input type="submit" class="btn btn-success my-5" id="add_lesson" name="add_lesson" value="Add lesson">
-                            <a href="manage_lesson.php?id=<?=$_SESSION['course_id'];?>" class="btn btn-danger my-5">Close</a>
+                            <a href="manage_lesson.php?id=<?=$row['id'];?>" class="btn btn-danger my-5">Close</a>
                         </div>
                     </div>
                 </form>

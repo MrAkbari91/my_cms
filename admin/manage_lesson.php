@@ -15,29 +15,13 @@ if (isset($_GET['id'])) {
     $course_row = $course_result->fetch_assoc();
 }
 
-
-// // $course_sql = "SELECT * FROM courses where id=$id";
-// // $course_result = mysqli_query($con, $course_sql);
-// // $course_row=$course_result->fetch_assoc();
-
-
-// $sql = "SELECT * FROM lesson where course_id=$id";
-// $result = mysqli_query($con, $sql);
-// $row = $result->fetch_assoc();
-
-// // $course_id=  $row['course_id'];
-// // var_dump($row['course_id']);die();
-
-// $course_sql = "SELECT * FROM courses where id=$id";
-// $course_result = mysqli_query($con, $course_sql);
-// $course_row = $course_result->fetch_assoc();
 ?>
 
 
 <div class="col-12">
     <div class="card">
         <div class="card-header">
-            <h3><b><?= $course_row['course_name'] ?> </b> </h3>
+            <h3><b><a href="lessons.php"> <?= $course_row['course_name']; ?> </a> </b> </h3>
             <a class="btn btn-info" href="add_lesson.php?course_id=<?= $course_row['id']; ?>">Add Lesson <span class="btn-icon-end"><i class="fa fa-plus color-info"></i></span>
             </a>
         </div>
@@ -93,7 +77,7 @@ if (isset($_GET['id'])) {
                                 <td><?= $row['lesson_description']; ?></td>
                                 <td>
                                     <div class="d-flex">
-                                        <a href="update_course.php?from=course&id=<?= $row['id']; ?>" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                        <a href="update_lesson.php?from=course&lesson_id=<?= $row['lesson_id']; ?>" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
                                         <?php if ($row['is_active'] == 0) { ?>
                                             <a href="query.php?from=lesson&type=active&course_id=<?=$row['course_id'];?>&lesson_id=<?= $row['lesson_id']; ?>" class="btn btn-success shadow btn-xs sharp"><i class="fa fa-toggle-off"></i></a>
                                         <?php } else { ?>

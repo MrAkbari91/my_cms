@@ -50,8 +50,13 @@
 					<i class="flaticon-381-diamond"></i>
 				</span>
 				<div class="media-body text-white text-end">
-					<h3 class="text-white mb-1">Earning</h3>
-					<h3 class="text-white">$56K</h3>
+				<h3 class="text-white mb-1">Total</h3>
+					<?php
+					$sql = "SELECT sum(txnamount) as total FROM courseorders;";
+					$result = $con->query($sql);
+					$row = $result->fetch_assoc();
+					?>
+					<h3 class="text-white">$<?=$row['total'];?></h3>
 				</div>
 			</div>
 		</div>
@@ -65,8 +70,13 @@
 					<i class="flaticon-381-heart"></i>
 				</span>
 				<div class="media-body text-white text-end">
-					<h3 class="text-white mb-1">Total</h3>
-					<h3 class="text-white">783K</h3>
+				<h3 class="text-white mb-1">Total</h3>
+					<?php
+					$sql = "SELECT sum(txnamount) as total FROM courseorders;";
+					$result = $con->query($sql);
+					$row = $result->fetch_assoc();
+					?>
+					<h3 class="text-white">$<?=$row['total'];?></h3>
 				</div>
 			</div>
 		</div>

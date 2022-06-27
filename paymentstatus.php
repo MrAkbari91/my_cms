@@ -34,12 +34,6 @@
 <!-- end search bar  -->
 
 
-	<!--start contact us  -->
-	<?php
-		include('contact.php');
-	?>
-	<!--end  contact us  -->
-
 
 <!-- start footer -->
 <?php
