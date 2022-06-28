@@ -7,10 +7,6 @@
 
 
 
-
-
-
-
 <!-- js -->
 <script>
 	document.getElementById("year").innerHTML = new Date().getFullYear();
@@ -25,6 +21,10 @@
 <script type="text/javascript" src="js/all.min.js"></script>
 
 <script type="text/javascript" src="js/ajaxrequest.js"></script>
+<script src="js/js/toastr.min.js"></script>
+
+<!-- All init script -->
+<script src="js/js/plugins-init/toastr-init.js"></script>
 
 </body>
 

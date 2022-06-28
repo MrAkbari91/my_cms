@@ -9,7 +9,7 @@ include('include/header.php');
 <div class="container-fluid remove-vid-marg position-relative">
 	<div class="vid-parent">
 		<video playsinline autoplay muted loop>
-			<source src="image/banvid.mp4">
+			<source src="images/banvid.mp4">
 		</video>
 		<div class="vid-overlay"></div>
 	</div>

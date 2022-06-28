@@ -35,6 +35,9 @@ $row = $result->fetch_assoc();
 		.btn-buy-now {
 			display: none !important;
 		}
+		.content-body{
+			min-height: 100%!important;
+		}
 	</style>
 </head>
 
@@ -129,11 +132,11 @@ $row = $result->fetch_assoc();
 							<span class="nav-text">My Course</span>
 						</a>
 					</li>
-					<!-- <li><a href="lessons.php" class="ai-icon" aria-expanded="false">
+					<li><a href="paymentstatus.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-notebook-1"></i>
-							<span class="nav-text">Lessons</span>
+							<span class="nav-text">Payment Status</span>
 						</a>
-					</li> -->
+					</li>
 					<li><a href="feedback.php" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-list-1"></i>
 							<span class="nav-text">Feedback</span>

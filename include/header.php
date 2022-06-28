@@ -32,6 +32,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
     <link rel="stylesheet" href="css/style.css">
 
 
+
     <title>course management</title>
 </head>
 
@@ -55,9 +56,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/cms/dbcon.php";
                 <?php
                 session_start();
                 if(isset($_SESSION['studentlogin'])){
-                    echo '<li class="nav-item custom-nav-item">
-                        <a class="nav-link" href="paymentstatus.php">Payment</a>
-                    </li>
+                    echo '
                     <li class="nav-item custom-nav-item">
                     <a class="nav-link" href="student/profile.php">My Profile</a>
                 </li>
