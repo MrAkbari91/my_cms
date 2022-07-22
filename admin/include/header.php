@@ -46,19 +46,13 @@ $row = $result->fetch_assoc();
 
 <body>
 	<!-- Main wrapper start -->
-	<div id="main-wrapper">
+	<div id="main-wrapper" class="show">
 
 		<!-- Nav header start -->
 		<div class="nav-header">
-			<a href="index.html" class="brand-logo">
+			<a href="dashboard.php" class="brand-logo">
 				<!-- <img src="" alt="asdfas" srcset=""> -->
 			</a>
-
-			<div class="nav-control">
-				<div class="hamburger">
-					<span class="line"></span><span class="line"></span><span class="line"></span>
-				</div>
-			</div>
 		</div>
 
 		<!-- Nav header end -->
